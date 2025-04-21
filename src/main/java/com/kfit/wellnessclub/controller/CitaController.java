@@ -19,6 +19,10 @@ public class CitaController {
         model.addAttribute("cita", new Cita());
         return "cita/formulario";
     }
+    @GetMapping("/clases")
+    public String verClasesGrupales() {
+        return "cita/clases";
+    }
 
     @PostMapping("/cita/guardar")
     public String guardar(Cita cita) {

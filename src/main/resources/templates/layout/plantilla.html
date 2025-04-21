@@ -115,9 +115,20 @@
                         <a th:href="@{/nutricion}" th:text="#{menu.nutricion}">Nutrición</a>
                         <a th:href="@{/cita/formulario}" th:text="#{menu.soporte}">Contactar Soporte</a>
                         <a th:href="@{/sobrenosotros#equipo}" th:text="#{menu.entrenadores}">Ver Entrenadores</a>
+                        <a th:href="@{/redes}" th:text="#{menu.redes}">Redes Sociales</a>
                     </div>
                 </div>
             </nav>
+
+            <!-- Íconos de redes sociales -->
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <a href="https://www.instagram.com/kfit_wellnessclub?igsh=dTdwbnZyZ2UzYnQ1" target="_blank">
+                    <img th:src="@{/img/instagram_icon.png}" alt="Instagram" style="height: 30px;">
+                </a>
+                <a href="https://www.tiktok.com/@kfit_wellnessclub?_t=ZM-8vj8kxb8GRB&_r=1" target="_blank">
+                    <img th:src="@{/img/tiktok_icon.png}" alt="TikTok" style="height: 30px;">
+                </a>
+            </div>
 
             <div class="idioma-selector">
                 <select onchange="location.href = '?lang=' + this.value">
@@ -126,7 +137,6 @@
                 </select>
             </div>
         </header>
-        <div style="margin-top: 50px;"></div>
         <!-- FOOTER -->
         <footer th:fragment="footer" style="background-color: #fce6f9; padding: 60px 60px; color: #4b0082; min-height: 250px;">
             <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; min-height: 100%;">

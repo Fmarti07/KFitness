@@ -9,29 +9,37 @@
             <img th:src="@{/img/logotransparent.png}" alt="KFit Logo" style="height: 200px;">
         </p>
 
-    <!-- Formulario  -->
-    <section style="padding: 60px 10%; display: flex; justify-content: center;">
-        <div style="background-color: #fce6f9; padding: 40px; border-radius: 12px; max-width: 500px; width: 100%; box-shadow: 0 0 15px rgba(0,0,0,0.05);">
-            <h2 style="color: #5d2b87; text-align: center; margin-bottom: 30px;">Agendar Cita</h2>
+        <!-- Formulario -->
+        <section style="padding: 60px 10%; display: flex; justify-content: center;">
+            <div style="background-color: #fce6f9; padding: 40px; border-radius: 12px; max-width: 500px; width: 100%; box-shadow: 0 0 15px rgba(0,0,0,0.05);">
+                <h2 style="color: #5d2b87; text-align: center; margin-bottom: 30px;">Agendar Cita</h2>
+                <form th:action="@{/cita/guardar}" th:object="${cita}" method="post" style="display: flex; flex-direction: column; gap: 15px;">
+                    <input type="text" th:field="*{nombre}" placeholder="Nombre" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+                    <input type="email" th:field="*{correo}" placeholder="Correo" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+                    <input type="date" th:field="*{fecha}" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+                    <select th:field="*{tipo}" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+                        <option value="">Seleccione tipo</option>
+                        <option value="Ejercicio">Ejercicio</option>
+                        <option value="Nutrición">Nutrición</option>
+                    </select>
+                    <button type="submit"
+                            style="background-color: #ff69b4; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: bold;">
+                        Agendar
+                    </button>
+                </form>
+            </div>
+        </section>
 
-            <form th:action="@{/cita/guardar}" th:object="${cita}" method="post" style="display: flex; flex-direction: column; gap: 15px;">
-                <input type="text" th:field="*{nombre}" placeholder="Nombre" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
-                <input type="email" th:field="*{correo}" placeholder="Correo" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
-                <input type="date" th:field="*{fecha}" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
-
-                <select th:field="*{tipo}" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
-                    <option value="">Seleccione tipo</option>
-                    <option value="Ejercicio">Ejercicio</option>
-                    <option value="Nutrición">Nutrición</option>
-                </select>
-
-                <button type="submit"
-                        style="background-color: #ff69b4; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: bold;">
-                    Agendar
-                </button>
-            </form>
+        <!-- Botón de clases grupales centrado debajo -->
+        <div style="text-align: center; margin-top: 20px; margin-bottom: 50px;">
+            <p style="color: #5d2b87; font-weight: bold; font-size: 1.1rem;">
+                🏋️ ¿Te gusta entrenar en grupo? Mira nuestras clases grupales
+            </p>
+            <a th:href="@{/cita/clases}" 
+               style="background-color: #5d2b87; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold;">
+                Ver Clases Grupales
+            </a>
         </div>
-    </section>
 
         <!-- SECCIÓN DE CONTACTO -->
         <section style="background-color: #fceafa; padding: 60px 10%;">

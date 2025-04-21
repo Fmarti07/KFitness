@@ -47,6 +47,37 @@
             </div>
         </section>
 
+        <!-- VIDEO DE PRESENTACIÓN -->
+        <section style="padding: 60px 10%; display: flex; justify-content: center; flex-direction: column; align-items: center; background-color: #fce6f9;">
+            <h2 style="color: #5d2b87; font-size: 1.8rem; font-weight: bold; margin-bottom: 20px;">
+                Conoce KFit Wellness Club
+            </h2>
+            <p style="text-align: center; max-width: 800px; margin-bottom: 30px;">
+                Karina Martínez te da la bienvenida a KFit Wellness Club y te cuenta por qué este espacio está diseñado para transformar tu salud física y mental.
+            </p>
+
+            <video width="720" height="480" autoplay muted loop controls style="border-radius: 12px;">
+                <source th:src="@{/video/karima.MP4}" type="video/mp4">
+                Tu navegador no soporta la etiqueta <code>video</code>.
+                <!-- Redes con íconos -->
+
+            </video>
+
+
+            <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 30px;">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/kfit_wellnessclub?igsh=dTdwbnZyZ2UzYnQ1" target="_blank" style="text-align: center;">
+                    <img th:src="@{/img/instagram_icon.png}" alt="Instagram" style="width: 60px;">
+                 
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@kfit_wellnessclub?_t=ZM-8vj8kxb8GRB&_r=1" target="_blank" style="text-align: center;">
+                    <img th:src="@{/img/tiktok_icon.png}" alt="TikTok" style="width: 60px;">
+                    
+                </a>
+            </div>
+        </section>
         <!-- Sección Beneficios -->
         <section style="padding: 60px 10%; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px;">
             <!-- Texto -->
