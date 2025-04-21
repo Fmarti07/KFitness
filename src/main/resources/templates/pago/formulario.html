@@ -1,0 +1,50 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head th:replace="~{layout/plantilla :: head}">
+    <title>Formulario de Pago</title>
+</head>
+<body>
+    <!-- Header del sitio -->
+    <header th:replace="~{layout/plantilla :: header}"></header>
+
+    <!-- Contenedor principal -->
+    
+      <p style="margin-bottom: 20px; display: flex; justify-content: center;">
+    <img th:src="@{/img/logotransparent.png}" alt="KFit Logo" style="height: 200px;">
+</p>
+
+
+    <section style="padding: 60px 10%; display: flex; justify-content: center; align-items: center; background-color: #fce6f9;">
+        <div style="background-color: white; padding: 40px; border-radius: 12px; max-width: 500px; width: 100%; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+            <h2 style="text-align: center; color: #5d2b87; margin-bottom: 30px;">Formulario de Pago</h2>
+
+            <p style="text-align: center; font-weight: bold; color: #4b0082;">Plan seleccionado: 
+                <span th:text="${planSeleccionado}" style="color: #ff4fb7;"></span>
+            </p>
+
+            <form method="post" th:action="@{/pago/confirmar}" style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+                <input type="hidden" th:name="plan" th:value="${planSeleccionado}"/>
+
+                <input type="text" name="nombre" placeholder="Nombre en la tarjeta" required 
+                       style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+
+                <input type="text" name="numero" placeholder="Número de tarjeta" required 
+                       style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+
+                <input type="text" name="expiracion" placeholder="Expiración (MM/AA)" required 
+                       style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+
+                <input type="text" name="cvv" placeholder="CVV" required 
+                       style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+
+                <button type="submit"
+                        style="background-color: #ff4fb7; color: white; padding: 12px; border: none; border-radius: 6px; font-weight: bold;">
+                    Confirmar Suscripción
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer th:replace="~{layout/plantilla :: footer}"></footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head th:replace="~{layout/plantilla :: head}">
+    <title>Configuración de Cookies</title>
+</head>
+<body>
+<header th:replace="~{layout/plantilla :: header}"></header>
+
+<section style="padding: 60px 10%; background-color: #fce6f9;">
+    <h1 style="color: #5d2b87;">Configuración de Cookies</h1>
+
+
+    <form method="post" th:action="@{/cookies/guardar}" style="margin-top: 30px;">
+        <div style="margin-bottom: 20px;">
+            <label>
+                <input type="checkbox" name="esenciales" checked disabled> Cookies esenciales (requeridas)
+            </label><br>
+            <label>
+                <input type="checkbox" name="analiticas"> Cookies analíticas
+            </label><br>
+            <label>
+                <input type="checkbox" name="marketing"> Cookies de marketing
+            </label>
+        </div>
+            <p style="max-width: 800px; margin-top: 20px;">
+        Usamos cookies para mejorar tu experiencia en nuestro sitio. Algunas cookies son esenciales para el funcionamiento de la página, mientras que otras nos ayudan a mejorar nuestros servicios.
+    </p>
+
+        <button type="submit"
+                style="background-color: #5d2b87; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+            Guardar preferencias
+        </button>
+    </form>
+</section>
+
+<footer th:replace="~{layout/plantilla :: footer}"></footer>
+</body>
+</html>

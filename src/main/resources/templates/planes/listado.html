@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head th:replace="~{layout/plantilla :: head}">
+    <title>Planes Disponibles</title>
+</head>
+<body>
+    <!-- Encabezado reutilizable -->
+    <header th:replace="~{layout/plantilla :: header}"></header>
+
+    <!-- Logo centrado -->
+    <p style="margin-bottom: 20px; display: flex; justify-content: center;">
+        <img th:src="@{/img/logotransparent.png}" alt="KFit Logo" style="height: 200px;">
+    </p>
+
+    <!-- Título -->
+    <section style="padding: 60px 10%; text-align: center;">
+        <h1 style="color: #5d2b87;">Planes Disponibles</h1>
+
+        <!-- Lista de planes -->
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <div th:each="plan : ${planes}" 
+                 style="border: 1px solid #ccc; padding: 20px; border-radius: 10px; width: 300px; text-align: center;">
+                
+                <h3 th:text="${plan.nombre}" style="color: #5d2b87;"></h3>
+                <p th:text="${plan.descripcion}"></p>
+                <p><strong>Precio:</strong> ₡<span th:text="${plan.precio}"></span></p>
+                <p><strong>Duración:</strong> <span th:text="${plan.duracion}"></span></p>
+
+                <!-- Botón de suscripción redirige al formulario de pago -->
+                <a th:href="@{'/pago/formulario'(plan=${plan.nombre})}"
+                   style="background-color: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 5px; text-decoration: none;">
+                    Suscribirse
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer reutilizable -->
+    <footer th:replace="~{layout/plantilla :: footer}"></footer>
+</body>
+</html>

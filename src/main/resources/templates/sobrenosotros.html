@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head th:replace="~{layout/plantilla :: head}">
+    <title>Sobre Nosotros - KFit</title>
+</head>
+<body>
+    <header th:replace="~{layout/plantilla :: header}"></header>
+
+    <!-- MISIÓN -->
+    <section style="background-color: #fceafa; padding: 60px 10%;">
+        <h2 style="color: #5d2b87;">Nuestra Misión</h2>
+        <p>Promover un estilo de vida saludable a través del ejercicio y la nutrición balanceada.</p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 40px;">
+            <div style="flex: 1 1 300px;">
+                <p style="font-weight: bold; color: #5d2b87;">Nuestra historia: Pasión por el ejercicio y la nutrición para todos.</p>
+            </div>
+            <div style="flex: 1 1 300px; text-align: center;">
+                <img src="/img/mision.jpg" alt="Misión" style="width: 100%; max-width: 400px; border-radius: 12px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPO -->
+    <section style="padding: 60px 10%;">
+        <h2 style="color: #5d2b87; text-align: center;">Nuestro equipo</h2>
+        <p style="text-align: center;">Conoce a nuestros profesionales de ejercicio y nutrición.</p>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
+            <div style="text-align: center;">
+                <img src="/img/equipo1.jpg" alt="Juan Pérez" style="width: 180px; border-radius: 10px;">
+                <p><strong>Juan Pérez</strong><br>Entrenador Personal</p>
+            </div>
+            <div style="text-align: center;">
+                <img src="/img/equipo2.jpg" alt="María López" style="width: 180px; border-radius: 10px;">
+                <p><strong>María López</strong><br>Nutricionista Certificada</p>
+            </div>
+            <div style="text-align: center;">
+                <img src="/img/equipo3.jpg" alt="Carlos Gómez" style="width: 180px; border-radius: 10px;">
+                <p><strong>Carlos Gómez</strong><br>Fisioterapeuta</p>
+            </div>
+            <!-- Agrega más miembros si lo deseas -->
+        </div>
+    </section>
+
+    <!-- ESTADÍSTICAS Y TESTIMONIOS -->
+    <section style="background-color: #fceafa; padding: 60px 10%;">
+        <h2 style="color: #5d2b87;">Estadísticas que reflejan nuestro compromiso con la salud</h2>
+        <p>Contamos con más de 500 clientes satisfechos que han transformado su vida con nosotros.</p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 30px;">
+            <div style="flex: 1 1 300px;">
+                <img src="/img/estadistica.jpg" alt="Estadística" style="width: 100%; border-radius: 10px;">
+            </div>
+            <div style="flex: 1 1 300px;">
+                <p><strong>95%</strong> recomiendan nuestros servicios.</p>
+                <p><strong>80%</strong> mejora en salud general.</p>
+                <a th:href="@{/cita/formulario}" class="btn" style="margin-top: 20px; background-color: #5d2b87; color: white; padding: 10px 20px; border-radius: 5px;">Contáctanos</a>
+            </div>
+        </div>
+
+        <div style="margin-top: 60px; text-align: center;">
+            <h3 style="color: #5d2b87;">Lo que dicen nuestros clientes</h3>
+            <blockquote style="font-style: italic; margin-top: 20px;">
+                "Desde que comencé a entrenar aquí, mi energía ha aumentado y me siento más saludable que nunca."
+                <br><span style="font-weight: bold;">- Laura Pérez, Cliente</span>
+            </blockquote>
+        </div>
+    </section>
+
+    <footer th:replace="~{layout/plantilla :: footer}"></footer>
+</body>
+</html>

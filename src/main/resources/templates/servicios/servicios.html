@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head th:replace="~{layout/plantilla :: head}">
+    <title th:text="#{servicios.meta.titulo}">Nuestros Servicios</title>
+</head>
+<body>
+<header th:replace="~{layout/plantilla :: header}"></header>
+
+<!-- HERO -->
+<section style="background-color: #fceafa; padding: 60px 10%; text-align: center;">
+    <h1 style="color: #5d2b87;" th:text="#{servicios.titulo}">Nuestros Servicios</h1>
+     <p style="margin-bottom: 20px; display: flex; justify-content: center;">
+    <img th:src="@{/img/logotransparent.png}" alt="KFit Logo" style="height: 200px;">
+</p>
+    <p th:text="#{servicios.intro1}">Conoce los servicios que ofrecemos para mejorar tu bienestar.</p>
+    <h2 style="color: #4b0082; font-weight: bold;" th:text="#{servicios.subtitulo}">Descubre nuestros<br>servicios de bienestar integral</h2>
+    <p th:text="#{servicios.descripcion}">Obtén una experiencia completa de salud con planes de nutrición, ejercicio físico y seguimiento profesional.</p>
+    <div style="margin-top: 20px;">
+        <a th:href="@{/cita/formulario}" class="btn"
+           style="background-color: #5d2b87; color: white; padding: 10px 20px; border-radius: 5px;" th:text="#{servicios.btn.inscribirse}">Inscribirse</a>
+        <a th:href="@{/nutricion}" class="btn"
+           style="border: 2px solid #5d2b87; color: #5d2b87; padding: 10px 20px; border-radius: 5px;" th:text="#{servicios.btn.consulta}">Consulta</a>
+    </div>
+</section>
+
+<!-- TARJETAS DE SERVICIOS -->
+<section style="display: flex; justify-content: space-around; flex-wrap: wrap; padding: 60px 5%; background-color: #fff;">
+    <div style="flex: 1 1 300px; max-width: 300px; text-align: center; margin: 15px;">
+        <img th:src="@{/img/nutricion_icon.png}" style="height: 100px;">
+        <h3 style="color: #5d2b87;" th:text="#{servicios.card1.titulo}">Planes de nutrición personalizados</h3>
+        <p th:text="#{servicios.card1.desc}">Cada plan se adapta a tus necesidades individuales.</p>
+    </div>
+    <div style="flex: 1 1 300px; max-width: 300px; text-align: center; margin: 15px;">
+        <img th:src="@{/img/ejercicio_icon.png}" style="height: 100px;">
+        <h3 style="color: #5d2b87;" th:text="#{servicios.card2.titulo}">Ejercicio para todos los niveles</h3>
+        <p th:text="#{servicios.card2.desc}">Entrena con rutinas efectivas y acompañamiento profesional.</p>
+    </div>
+    <div style="flex: 1 1 300px; max-width: 300px; text-align: center; margin: 15px;">
+        <img th:src="@{/img/asesoria_icon.png}" style="height: 100px;">
+        <h3 style="color: #5d2b87;" th:text="#{servicios.card3.titulo}">Asesoramiento constante</h3>
+        <p th:text="#{servicios.card3.desc}">Te apoyamos paso a paso hacia tus objetivos.</p>
+    </div>
+</section>
+
+<!-- SECCIÓN DESTACADA DE SERVICIOS -->
+<section style="padding: 60px 10%;">
+    <h2 style="color: #5d2b87; text-align: center;" th:text="#{servicios.detalle.titulo}">Explora en detalle nuestros servicios</h2>
+    
+    <!-- Nutrición -->
+    <div style="display: flex; flex-wrap: wrap; align-items: center; margin-top: 40px; gap: 40px;">
+        <div style="flex: 1;">
+            <h3 style="color: #4b0082;" th:text="#{servicios.detalle.nutricion.titulo}">Planes de Nutrición Personalizados para Ti</h3>
+            <p th:text="#{servicios.detalle.nutricion.desc}">Diseñamos tus comidas según tus objetivos y estilo de vida.</p>
+        </div>
+        <div style="flex: 1;">
+            <img th:src="@{/img/nutricion_detalle.jpg}" style="width: 100%; border-radius: 10px;">
+        </div>
+    </div>
+
+    <!-- Ejercicio -->
+    <div style="display: flex; flex-wrap: wrap; align-items: center; margin-top: 60px; gap: 40px;">
+        <div style="flex: 1;">
+            <img th:src="@{/img/ejercicio_detalle.jpg}" style="width: 100%; border-radius: 10px;">
+        </div>
+        <div style="flex: 1;">
+            <h3 style="color: #4b0082;" th:text="#{servicios.detalle.ejercicio.titulo}">Entrenamiento físico para todos los niveles</h3>
+            <p th:text="#{servicios.detalle.ejercicio.desc}">Programas accesibles, dinámicos y acompañados de entrenadores.</p>
+        </div>
+    </div>
+
+    <!-- Asesoramiento -->
+    <div style="display: flex; flex-wrap: wrap; align-items: center; margin-top: 60px; gap: 40px;">
+        <div style="flex: 1;">
+            <h3 style="color: #4b0082;" th:text="#{servicios.detalle.asesoria.titulo}">Acompañamiento y motivación continua</h3>
+            <p th:text="#{servicios.detalle.asesoria.desc}">Consulta y seguimiento para mantenerte en el camino correcto.</p>
+        </div>
+        <div style="flex: 1;">
+            <img th:src="@{/img/asesoria_detalle.jpg}" style="width: 100%; border-radius: 10px;">
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section style="background-color: #fceafa; padding: 60px 10%; text-align: center;">
+    <h2 style="color: #5d2b87;" th:text="#{servicios.testimonios.titulo}">Testimonios de Clientes</h2>
+    <p th:text="#{servicios.testimonios.desc}">Historias reales de quienes confiaron en KFit.</p>
+    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 30px;">
+        <blockquote style="max-width: 300px; font-style: italic;" th:text="#{servicios.testimonios.cita1}">"Los resultados fueron sorprendentes y rápidos."</blockquote>
+        <blockquote style="max-width: 300px; font-style: italic;" th:text="#{servicios.testimonios.cita2}">"El mejor servicio que he tenido."</blockquote>
+    </div>
+</section>
+
+<!-- CTA FINAL -->
+<section style="text-align: center; padding: 60px 10%;">
+    <h2 style="color: #5d2b87;" th:text="#{servicios.cta.titulo}">Transforma tu vida hoy</h2>
+    <p th:text="#{servicios.cta.desc}">Regístrate y accede a nuestros servicios personalizados ahora.</p>
+    <a th:href="@{/cita/formulario}" class="btn" style="margin-top: 20px; background-color: #5d2b87; color: white; padding: 12px 30px; border-radius: 6px;" th:text="#{servicios.cta.btn}">Agendar</a>
+</section>
+
+<footer th:replace="~{layout/plantilla :: footer}"></footer>
+</body>
+</html>

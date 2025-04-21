@@ -1,0 +1,100 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title th:text="#{menu.ejercicio}">Ejercicio Efectivo</title>
+        <link rel="stylesheet" th:href="@{/css/styles.css}" />
+        <link rel="stylesheet" href="../../static/img/css/styles.css" type="text/css">
+
+    </head>
+    <body>
+
+        <!-- Header desde plantilla -->
+        <header th:replace="~{layout/plantilla :: header}"></header>
+
+        <!-- HERO EJERCICIO -->
+        <section style="background-color: #f8f0fc; padding: 80px 20px; text-align: center;">
+         <p style="margin-bottom: 20px; display: flex; justify-content: center;">
+    <img th:src="@{/img/logotransparent.png}" alt="KFit Logo" style="height: 200px;">
+</p>
+        </p>
+        <h1 class="fw-bold" style="color: #5d2b87; font-size: 2.5rem;" th:text="#{ejercicio.titulo}">Ejercicio para Todos</h1>
+        <p class="lead" style="max-width: 600px; margin: 15px auto;" th:text="#{ejercicio.intro}">
+            El ejercicio físico es fundamental para mantener un estilo de vida saludable y activo...
+        </p>
+        <!-- NUEVO BOTÓN -->
+        <a th:href="@{/cita/formulario}" class="btn" style="background-color: #ff4fb7; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none;">Agendar Cita</a>
+
+        <!-- SERVICIOS DE ENTRENAMIENTO CON VIDEOS DE YOUTUBE -->
+        <!-- SERVICIOS DE ENTRENAMIENTO CON VIDEOS DE YOUTUBE -->
+        <section style="padding: 80px 20px; background: linear-gradient(#fff, #e0d7f8); text-align: center;">
+            <p class="text-muted">[[#{menu.ejercicio}]]</p>
+            <h2 class="fw-bold mb-4" th:text="#{ejercicio.servicios.titulo}" style="color: #5d2b87;">Programas de entrenamiento para todos</h2>
+            <p class="mb-5" th:text="#{ejercicio.servicios.descripcion}" style="max-width: 600px; margin: 0 auto 40px auto;"></p>
+
+            <div class="row" style="display: flex; flex-direction: column; gap: 60px; align-items: center;">
+                <!-- Cardio -->
+                <div style="width: 100%; max-width: 800px;">
+                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/p_kgVS3-_8M?si=3C_pXrqJyGh7mggX" title="Cardio Video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+                            style="border-radius: 12px;"></iframe>
+                    <p style="font-weight: bold; color: #888; margin-top: 10px;">Cardio</p>
+                    <h5 class="fw-bold" th:text="#{ejercicio.servicio1}" style="color: #5d2b87;">Cardio Dinámico</h5>
+                    <p th:text="#{ejercicio.servicio1.desc}" style="margin-top: 10px;">Mejora tu resistencia y quema calorías de forma divertida.</p>
+                </div>
+
+                <!-- Fuerza -->
+                <div style="width: 100%; max-width: 800px;">
+                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/2tM1LFFxeKg" title="Entrenamiento de Fuerza" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+                            style="border-radius: 12px;"></iframe>
+                    <p style="font-weight: bold; color: #888; margin-top: 10px;">Fuerza</p>
+                    <h5 class="fw-bold" th:text="#{ejercicio.servicio2}" style="color: #5d2b87;">Entrenamiento de Fuerza</h5>
+                    <p th:text="#{ejercicio.servicio2.desc}" style="margin-top: 10px;">Fortalece tu cuerpo con rutinas diseñadas para ti.</p>
+                </div>
+
+                <!-- Yoga -->
+                <div style="width: 100%; max-width: 800px;">
+                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/v7AYKMP6rOE" title="Yoga y Bienestar" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+                            style="border-radius: 12px;"></iframe>
+                    <p style="font-weight: bold; color: #888; margin-top: 10px;">Yoga</p>
+                    <h5 class="fw-bold" th:text="#{ejercicio.servicio3}" style="color: #5d2b87;">Bienestar y Flexibilidad</h5>
+                    <p th:text="#{ejercicio.servicio3.desc}" style="margin-top: 10px;">Relaja cuerpo y mente con sesiones de estiramiento guiadas.</p>
+                </div>
+            </div>
+        </section>
+        <!-- DESTACADO -->
+        <section style="padding: 60px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center;">
+            <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 20px;">
+                <h3 class="fw-bold" th:text="#{ejercicio.destacado.titulo}" style="color: #5d2b87;">Tu progreso es nuestra meta</h3>
+                <p th:text="#{ejercicio.destacado.descripcion}">Te acompañamos en cada etapa de tu desarrollo físico con apoyo personalizado.</p>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><span style="margin-right: 8px;">📊</span> <span th:text="#{ejercicio.destacado.item1}">Seguimiento personalizado</span></li>
+                    <li><span style="margin-right: 8px;">🤝</span> <span th:text="#{ejercicio.destacado.item2}">Sesiones individuales y grupales</span></li>
+                    <li><span style="margin-right: 8px;">⏰</span> <span th:text="#{ejercicio.destacado.item3}">Horarios flexibles</span></li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 300px; max-width: 500px; text-align: center;">
+                <img th:src="@{/img/Personal.png}" alt="Entrenador" style="width: 100%; max-width: 1000px;">
+            </div>
+
+
+        </section>
+
+        <section style="background-color: #5d2b87; color: white; text-align: center; padding: 60px 20px;">
+            <h3 class="fw-bold" th:text="#{ejercicio.cta}">Da el primer paso hacia tu mejor versión</h3>
+            <p th:text="#{ejercicio.cta.descripcion}">Agenda tu sesión gratuita hoy mismo.</p>
+            <a th:href="@{/cita/formulario}" 
+               style="background-color: #ff5ebc; color: white; font-weight: bold; padding: 10px 25px; border-radius: 10px; text-decoration: none; display: inline-block;">
+                Agendar Cita
+            </a>
+        </section>
+        <!-- Botón volver -->
+        <div class="text-center my-5">
+            <a th:href="@{/}" class="btn btn-kfit" th:text="#{ejercicio.btn.volver}">Volver al inicio</a>
+        </div>
+
+        <!-- Footer desde plantilla -->
+        <footer th:replace="~{layout/plantilla :: footer}"></footer>
+
+</body>
+</html>

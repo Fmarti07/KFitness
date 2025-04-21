@@ -1,0 +1,39 @@
+{
+    "elements": {
+        "option": {
+            "attributes": {
+                "value": {}
+            }
+        }
+    },
+    "attributes": {
+        "th:text": {
+            "context": "td"
+        },
+        "th:if": {
+            "context": "span"
+        },
+        "th:src": {
+            "context": "img"
+        },
+        "th:action": {
+            "context": "form"
+        },
+        "th:replace": {
+            "context": "head"
+        },
+        "th:each": {
+            "context": "tr"
+        },
+        "th:fragment": {
+            "context": "head"
+        },
+        "th:href": {},
+        "th:field": {
+            "context": "input"
+        },
+        "th:selected": {
+            "context": "option"
+        }
+    }
+}

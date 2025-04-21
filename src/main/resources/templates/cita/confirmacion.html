@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head th:replace="~{layout/plantilla :: head}">
+    <title>Confirmación de Clase</title>
+</head>
+<body>
+<header th:replace="~{layout/plantilla :: header}"></header>
+
+<section style="padding: 60px 10%; text-align: center;">
+    <h2 style="color: #5d2b87;" th:text="${mensaje}">¡Clase confirmada!</h2>
+    <a th:href="@{/}" style="margin-top: 20px; display: inline-block; background-color: #5d2b87; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Volver al inicio</a>
+</section>
+
+<footer th:replace="~{layout/plantilla :: footer}"></footer>
+</body>
+</html>

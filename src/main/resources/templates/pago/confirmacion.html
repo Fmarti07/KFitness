@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head th:replace="~{layout/plantilla :: head}">
+    <title>Confirmación de Pago</title>
+</head>
+<body>
+
+<!-- Header común -->
+<header th:replace="~{layout/plantilla :: header}"></header>
+
+
+   <p style="margin-bottom: 20px; display: flex; justify-content: center;">
+    <img th:src="@{/img/logotransparent.png}" alt="KFit Logo" style="height: 200px;">
+</p>
+
+
+<!-- Contenido principal -->
+<section style="padding: 60px 10%; text-align: center;">
+    <div style="background-color: #fceafa; padding: 40px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 600px; margin: auto;">
+        <h2 style="color: #5d2b87; font-size: 2rem;" th:text="${mensaje}">¡Gracias por tu suscripción!</h2>
+        <p style="margin-top: 20px;">Nos alegra tenerte como parte de la familia KFit Wellness Club.</p>
+        <a th:href="@{/}" 
+           style="margin-top: 30px; display: inline-block; background-color: #ff69b4; color: white; padding: 12px 25px; border-radius: 6px; text-decoration: none;">
+            Volver al Inicio
+        </a>
+    </div>
+</section>
+
+<!-- Footer común -->
+<footer th:replace="~{layout/plantilla :: footer}"></footer>
+
+</body>
+</html>

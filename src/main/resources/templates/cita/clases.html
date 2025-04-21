@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head th:replace="~{layout/plantilla :: head}">
+    <title>Reservar Clase Grupal</title>
+</head>
+<body>
+<header th:replace="~{layout/plantilla :: header}"></header>
+
+<p style="margin-bottom: 20px; display: flex; justify-content: center;">
+    <img th:src="@{/img/logotransparent.png}" alt="KFit Logo" style="height: 200px;">
+</p>
+
+<section style="padding: 60px 10%; display: flex; justify-content: center; align-items: center;">
+    <div style="background-color: #fce6f9; padding: 40px; border-radius: 12px; width: 100%; max-width: 500px;">
+        <h2 style="color: #5d2b87; text-align: center; margin-bottom: 30px;">Reserva tu Clase Grupal</h2>
+
+        <form th:action="@{/cita/reservar-clase}" method="post" style="display: flex; flex-direction: column; gap: 15px;">
+            <select name="tipoClase" required style="padding: 10px; border-radius: 6px;">
+                <option value="">Seleccione tipo de clase</option>
+                <option value="Yoga">🧘 Yoga</option>
+                <option value="Natación">🏊 Natación</option>
+                <option value="Cardio Dance">💃 Cardio Dance</option>
+                <option value="Funcional">🏋️ Funcional</option>
+                <option value="Pilates">🧘 Pilates</option>
+                <option value="Boxeo Fitness">🥊 Boxeo Fitness</option>
+            </select>
+
+            <input type="text" name="nombre" placeholder="Tu Nombre" required style="padding: 10px; border-radius: 6px;">
+            <input type="email" name="correo" placeholder="Tu Correo" required style="padding: 10px; border-radius: 6px;">
+            <input type="date" name="fecha" required style="padding: 10px; border-radius: 6px;">
+
+            <select name="hora" required style="padding: 10px; border-radius: 6px;">
+                <option value="">Selecciona hora</option>
+                <option value="07:00">07:00 am</option>
+                <option value="10:00">10:00 am</option>
+                <option value="13:00">01:00 pm</option>
+                <option value="18:00">06:00 pm</option>
+                <option value="20:00">08:00 pm</option>
+            </select>
+
+            <button type="submit" style="background-color: #ff69b4; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: bold;">
+                Reservar Clase
+            </button>
+        </form>
+
+        <!-- Imagen decorativa -->
+        <div style="text-align: center; margin-top: 30px;">
+            <img th:src="@{/img/grupales.png}" alt="Clases Grupales" style="max-width: 100%; border-radius: 8px;">
+            <p style="margin-top: 15px; font-style: italic; color: #4b0082;">
+                “Entrenar en grupo no solo fortalece tu cuerpo, también tu motivación.”
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer th:replace="~{layout/plantilla :: footer}"></footer>
+</body>
+</html>

@@ -1,0 +1,317 @@
+
+/* Tipografía y colores base */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
+
+/* Hero Section */
+.hero {
+    padding: 60px 30px;
+    text-align: center;
+    background-color: #f8f0fc;
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    color: #5d2b87;
+    font-weight: bold;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 15px auto;
+    line-height: 1.6;
+}
+
+.btn-kfit {
+    background-color: #5d2b87;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.btn-kfit:hover {
+    background-color: #7a3db0;
+    color: white;
+}
+
+.btn-outline-kfit {
+    background-color: transparent;
+    border: 2px solid #5d2b87;
+    color: #5d2b87;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.btn-outline-kfit:hover {
+    background-color: #5d2b87;
+    color: white;
+}
+
+.section-gradient {
+    background: linear-gradient(#ffffff, #f8dcf8);
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.section-gradient h2 {
+    color: #5d2b87;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.section-gradient p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Iconos de servicios */
+.text-kfit {
+    color: #5d2b87;
+}
+
+/* Testimonios */
+.testimonial {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.testimonial blockquote {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #333;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* CTA */
+.cta {
+    background-color: #5d2b87;
+    color: white;
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.cta h3 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.cta .btn {
+    margin: 10px;
+}
+
+.text-kfit {
+    color: #5d2b87;
+}
+.btn-kfit {
+    background-color: #5d2b87;
+    color: white;
+    border: none;
+}
+.btn-kfit:hover {
+    background-color: #8236b5;
+}
+
+/* --- NUTRICIÓN HERO --- */
+.hero {
+    background-color: #f8f0fc;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    color: #5d2b87;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.hero p.lead {
+    max-width: 600px;
+    margin: 15px auto;
+}
+
+.hero .btn {
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+/* --- NUTRICIÓN SERVICIOS --- */
+.section-servicios {
+    padding: 80px 20px;
+    background: linear-gradient(#fff, #f8dcf8);
+    text-align: center;
+}
+
+.section-servicios h2 {
+    color: #5d2b87;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.section-servicios p {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.section-servicios .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.section-servicios .row > div {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+}
+
+.section-servicios i {
+    color: #5d2b87;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.section-servicios h5 {
+    font-weight: bold;
+    color: #5d2b87;
+}
+
+.section-servicios .btn {
+    margin-top: 40px;
+}
+
+/* --- DESTACADO --- */
+.section-destacado {
+    padding: 60px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-destacado .text {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.section-destacado h3 {
+    color: #5d2b87;
+    font-weight: bold;
+}
+
+.section-destacado ul {
+    padding-left: 20px;
+}
+
+.section-destacado img {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    max-width: 100%;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* --- TESTIMONIO --- */
+.section-testimonio {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.section-testimonio img {
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.section-testimonio blockquote {
+    max-width: 600px;
+    margin: 30px auto 10px;
+    font-style: italic;
+}
+
+.section-testimonio footer {
+    color: #5d2b87;
+    margin-top: 10px;
+}
+
+/* --- CTA FINAL --- */
+.section-cta {
+    background-color: #5d2b87;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.section-cta .btn {
+    margin-top: 20px;
+}
+
+/* --- BOTÓN VOLVER --- */
+.volver {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.btn-rosa {
+    background-color: #ff69b4;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-rosa:hover {
+    background-color: #ff85c1;
+    color: white;
+}
+
+.btn-rosa {
+    background-color: #ff69b4;
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1rem;
+    border: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-rosa:hover {
+    background-color: #ff85c1;
+}.text-muted {
+
+}
+
+footer {
+    background-color: #fce6f9;
+    padding: 40px 60px;
+    color: #4b0082;
+    min-height: 250px; /* <- agrega esto */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+}

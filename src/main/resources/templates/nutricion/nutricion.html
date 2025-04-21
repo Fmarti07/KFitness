@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head th:replace="~{layout/plantilla :: head}">
+    <title th:text="#{menu.nutricion}">Nutrición</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <link rel="stylesheet" th:href="@{/css/nutricion.css}" />
+</head>
+<body>
+
+    <!-- Header desde plantilla -->
+    <header th:replace="~{layout/plantilla :: header}"></header>
+
+    <!-- HERO -->
+    <section style="background-color: #f8f0fc; padding: 80px 20px; text-align: center;">
+        <p style="margin-bottom: 20px; display: flex; justify-content: center;">
+    <img th:src="@{/img/logotransparent.png}" alt="KFit Logo" style="height: 200px;">
+</p>
+        <h1 class="fw-bold" th:text="#{nutricion.titulo}" style="color: #5d2b87; font-size: 2.5rem;">
+            Nutrición para Vida
+        </h1>
+        <p class="lead" th:text="#{nutricion.introExtendido}" style="max-width: 600px; margin: 15px auto;">
+            La nutrición adecuada es clave para una vida saludable y un bienestar duradero.
+            Nuestro propósito es ayudarte a transformar tus hábitos alimenticios con acompañamiento profesional
+            y planes personalizados que se adapten a tus necesidades. Estamos aquí para que te sientas bien,
+            te veas mejor y vivas con más energía cada día.
+        </p>
+        <div style="margin-top: 25px;">
+            <a th:href="@{/cita/formulario}" class="btn" th:text="#{hero.btn.agendar}"
+               style="background-color: #ff69b4; color: white; font-weight: bold; padding: 10px 25px; border-radius: 8px; text-decoration: none;">
+                Agendar Cita
+            </a>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section style="padding: 80px 20px; background: linear-gradient(#fff, #f8dcf8); text-align: center;">
+        <p class="text-muted">[[#{menu.nutricion}]]</p>
+        <h2 class="fw-bold mb-4" th:text="#{nutricion.servicios.titulo}" style="color: #5d2b87;">Descubre nuestros servicios de nutrición personalizados</h2>
+        <p class="mb-5" th:text="#{nutricion.servicios.descripcion}" style="max-width: 600px; margin: 0 auto 40px auto;"></p>
+
+        <div class="row justify-content-center" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px;">
+            <!-- Servicio 1 -->
+            <div style="flex: 1; min-width: 250px; max-width: 300px;">
+                <img th:src="@{/img/clicks (4).png}" alt="Planes" style="width: 220px; height: 220px; object-fit: contain; margin-bottom: 25px;">
+                <h5 class="fw-bold" th:text="#{nutricion.servicio1}" style="color: #5d2b87;">Planes de alimentación</h5>
+                <p th:text="#{nutricion.servicio1.desc}">Elige el plan que mejor se adapte a tus objetivos.</p>
+            </div>
+
+            <!-- Servicio 2 -->
+            <div style="flex: 1; min-width: 250px; max-width: 300px;">
+                <img th:src="@{/img/nutri.png}" alt="Nutricionista" style="width: 220px; height: 220px; object-fit: contain; margin-bottom: 25px;">
+                <h5 class="fw-bold" th:text="#{nutricion.servicio2}" style="color: #5d2b87;">Consultas con nutricionistas</h5>
+                <p th:text="#{nutricion.servicio2.desc}">Recibe asesoría profesional para mejorar tu dieta.</p>
+            </div>
+
+            <!-- Servicio 3 -->
+            <div style="flex: 1; min-width: 250px; max-width: 300px;">
+                <img th:src="@{/img/seguimiento.png}" alt="Seguimiento" style="width: 220px; height: 220px; object-fit: contain; margin-bottom: 25px;">
+                <h5 class="fw-bold" th:text="#{nutricion.servicio3}" style="color: #5d2b87;">Seguimiento continuo</h5>
+                <p th:text="#{nutricion.servicio3.desc}">Estamos contigo en cada paso del camino.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESTACADO -->
+    <section style="padding: 60px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center;">
+        <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 20px;">
+            <h3 class="fw-bold" th:text="#{nutricion.destacado.titulo}" style="color: #5d2b87;"></h3>
+            <p th:text="#{nutricion.destacado.descripcion}"></p>
+            <ul style="padding-left: 20px;">
+                <li th:text="#{nutricion.destacado.item1}"></li>
+                <li th:text="#{nutricion.destacado.item2}"></li>
+                <li th:text="#{nutricion.destacado.item3}"></li>
+            </ul>
+        </div>
+        <div style="flex: 1; min-width: 300px; max-width: 500px; text-align: center;">
+            <img th:src="@{/img/food.png}" alt="Nutrición Saludable" style="max-width: 100%; border-radius: 12px;">
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section style="text-align: center; padding: 60px 20px;">
+        <img th:src="@{/img/testimonio2.png}" alt="Cliente" style="max-width: 300px; border-radius: 20px;">
+        <blockquote style="max-width: 600px; margin: 30px auto 10px;">
+            <p th:text="#{nutricion.testimonio.texto}" style="font-style: italic;"></p>
+            <footer style="color: #5d2b87; margin-top: 10px;">Ana Pérez — Cliente Satisfecha</footer>
+        </blockquote>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section style="background-color: #5d2b87; color: white; text-align: center; padding: 60px 20px;">
+        <h2 class="fw-bold" th:text="#{nutricion.cta}" style="font-size: 2.5rem;">Transforma tu alimentación hoy</h2>
+        <p th:text="#{nutricion.cta.descripcion}">Agenda tu consulta gratuita y mejora tu salud.</p>
+        <div style="margin-top: 30px;">
+            <a th:href="@{/cita/formulario}" 
+               class="btn" 
+               style="background-color: #ff69b4; color: white; padding: 12px 30px; font-weight: bold; border-radius: 8px; text-decoration: none;"
+               th:text="#{nutricion.btn.agendar}">
+                Agendar Cita
+            </a>
+        </div>
+    </section>
+
+    <!-- VOLVER -->
+    <div class="text-center my-5">
+        <a th:href="@{/}" class="btn btn-kfit" th:text="#{nutricion.btn.volver}">Volver al inicio</a>
+    </div>
+
+    <!-- Footer desde plantilla -->
+    <footer th:replace="~{layout/plantilla :: footer}"></footer>
+
+</body>
+</html>

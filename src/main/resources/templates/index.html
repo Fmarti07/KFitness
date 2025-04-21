@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+    <head th:replace="~{layout/plantilla :: head}"></head>
+    <body>
+
+        <!-- Header desde plantilla -->
+        <header th:replace="~{layout/plantilla :: header}"></header>
+
+        <!-- SECCIÓN HERO MODERNA -->
+        <section style="padding: 60px 10%; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+            <!-- Texto + botones -->
+            <div style="flex: 1 1 350px; max-width: 500px;">
+                <h1 style="font-size: 2.5rem; color: #5d2b87; font-weight: bold; margin-bottom: 20px;">
+                    Transforma tu vida con ejercicio y nutrición
+                </h1>
+                <p style="margin-bottom: 25px; color: #333;">
+                    En nuestro centro, te ayudamos a alcanzar tus objetivos de salud y bienestar a través de programas personalizados de ejercicios y nutrición. Únete a nosotros y descubre un nuevo estilo de vida más saludable.
+                </p>
+                <div style="display: flex; gap: 10px;">
+                    <a th:href="@{/cita/formulario}" style="background-color: #5d2b87; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none;">Únete</a>
+                    <a th:href="@{/servicios}" style="border: 1px solid #333; color: #333; padding: 10px 20px; border-radius: 4px; text-decoration: none;">Más información</a>
+                </div>
+            </div>
+
+            <!-- Imagen -->
+            <div style="flex: 1 1 300px; text-align: center; margin-top: 30px;">
+                <img src="/img/shape%20your%20body%20(1).png" alt="Shape your body" style="max-width: 100%; border-radius: 30px;">
+            </div>
+        </section>
+
+        <!-- MISIÓN Y VISIÓN -->
+        <section style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 60px 10%;">
+            <!-- Título -->
+            <div style="flex: 1 1 300px;">
+                <h2 style="color: #5d2b87; font-size: 1.8rem; font-weight: bold;">
+                    Transforma tu vida con nuestra<br>misión de salud y bienestar integral.
+                </h2>
+            </div>
+
+            <!-- Texto -->
+            <div style="flex: 1 1 300px;">
+                <p>
+                    En nuestro negocio, creemos que cada persona merece alcanzar sus metas de salud.
+                    Nuestra visión es ofrecer un enfoque personalizado que inspire y motive a cada individuo.
+                    Juntos, trabajamos para construir un camino hacia un estilo de vida más saludable y equilibrado.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección Beneficios -->
+        <section style="padding: 60px 10%; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px;">
+            <!-- Texto -->
+            <div style="flex: 1 1 300px; max-width: 500px;">
+                <h2 style="color: #5d2b87; font-size: 1.5rem; font-weight: bold; margin-bottom: 20px;">
+                    Descubre los beneficios de elegir nuestros servicios
+                </h2>
+                <p style="margin-bottom: 20px;">
+                    Nuestros programas están diseñados para resultados garantizados con apoyo profesional constante.
+                </p>
+                <ul style="list-style: none; padding: 0; color: #333;">
+                    <li>🏋️ Planes personalizados</li>
+                    <li>💪 Apoyo profesional en todo momento</li>
+                    <li>⏱️ Resultados garantizados</li>
+                </ul>
+            </div>
+
+            <!-- Imagen -->
+            <div style="flex: 1 1 300px; max-width: 400px;">
+                <img src="/img/kfitbienestar.png" alt="Tu Bienestar a tu manera" style="max-width: 100%; border-radius: 12px;">
+            </div>
+        </section>
+
+        <!-- CTA Inspiracional -->
+        <section style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 60px 10%;">
+            <!-- Título -->
+            <div style="flex: 1 1 300px;">
+                <h2 style="color: #5d2b87; font-size: 2rem; font-weight: bold;">Transforma tu salud hoy</h2>
+            </div>
+
+            <!-- Texto + botones -->
+            <div style="flex: 1 1 300px;">
+                <p style="margin-bottom: 20px; max-width: 100%;">
+                    “El bienestar no es un destino, es un viaje constante. Cada entrenamiento, cada elección saludable y cada día con determinación te acercan a tu mejor versión. Sigue avanzando, tu cuerpo y mente te lo agradecerán.”
+                </p>
+                <div style="display: flex; gap: 10px;">
+                    <a th:href="@{/cita/formulario}" class="btn" style="background-color: #5d2b87; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none;">Inscribirse</a>
+                    <a th:href="@{/sobrenosotros}" class="btn" style="border: 1px solid #333; color: #333; padding: 10px 20px; border-radius: 4px; text-decoration: none;">Info</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer desde plantilla -->
+        <footer th:replace="~{layout/plantilla :: footer}"></footer>
+    </body>
+</html>
