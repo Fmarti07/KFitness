@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ *
+ * @author flormartinez
+ */
+
 @Service
 public class EjercicioServiceImpl implements EjercicioService {
 

@@ -1,5 +1,7 @@
 {
     "elements": {
+        "p": {},
+        "div": {},
         "option": {
             "attributes": {
                 "value": {}
@@ -10,17 +12,8 @@
         "th:text": {
             "context": "td"
         },
-        "th:if": {
-            "context": "span"
-        },
-        "th:src": {
-            "context": "img"
-        },
         "th:action": {
             "context": "form"
-        },
-        "th:replace": {
-            "context": "head"
         },
         "th:each": {
             "context": "tr"
@@ -28,8 +21,24 @@
         "th:fragment": {
             "context": "head"
         },
-        "th:href": {},
         "th:field": {
+            "context": "input"
+        },
+        "th:placeholder": {
+            "context": "input"
+        },
+        "th:if": {
+            "context": "span"
+        },
+        "th:src": {
+            "context": "img"
+        },
+        "style": {},
+        "th:replace": {
+            "context": "head"
+        },
+        "th:href": {},
+        "th:name": {
             "context": "input"
         },
         "th:selected": {

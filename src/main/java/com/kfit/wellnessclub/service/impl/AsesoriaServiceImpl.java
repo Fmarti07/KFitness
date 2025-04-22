@@ -5,6 +5,10 @@ import com.kfit.wellnessclub.domain.Asesoria;
 import com.kfit.wellnessclub.service.AsesoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+/**
+ *
+ * @author flormartinez
+ */
 
 @Service
 public class AsesoriaServiceImpl implements AsesoriaService {

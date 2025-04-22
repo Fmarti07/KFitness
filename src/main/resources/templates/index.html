@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
-    <head th:replace="~{layout/plantilla :: head}"></head>
+    <head th:replace="~{layout/plantilla :: head}">
+        <title th:text="#{hero.titulo}">KFit Wellness Club</title>
+    </head>
     <body>
 
-        <!-- Header desde plantilla -->
         <header th:replace="~{layout/plantilla :: header}"></header>
 
-        <!-- SECCIÓN HERO MODERNA -->
+        <!-- HERO -->
         <section style="padding: 60px 10%; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
-            <!-- Texto + botones -->
             <div style="flex: 1 1 350px; max-width: 500px;">
-                <h1 style="font-size: 2.5rem; color: #5d2b87; font-weight: bold; margin-bottom: 20px;">
+                <h1 style="font-size: 2.5rem; color: #5d2b87; font-weight: bold; margin-bottom: 20px;" th:text="#{hero.titulo}">
                     Transforma tu vida con ejercicio y nutrición
                 </h1>
-                <p style="margin-bottom: 25px; color: #333;">
-                    En nuestro centro, te ayudamos a alcanzar tus objetivos de salud y bienestar a través de programas personalizados de ejercicios y nutrición. Únete a nosotros y descubre un nuevo estilo de vida más saludable.
+                <p style="margin-bottom: 25px; color: #333;" th:text="#{hero.descripcion}">
+                    En nuestro centro, te ayudamos a alcanzar tus objetivos de salud y bienestar...
                 </p>
                 <div style="display: flex; gap: 10px;">
-                    <a th:href="@{/cita/formulario}" style="background-color: #5d2b87; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none;">Únete</a>
-                    <a th:href="@{/servicios}" style="border: 1px solid #333; color: #333; padding: 10px 20px; border-radius: 4px; text-decoration: none;">Más información</a>
+                    <a th:href="@{/cita/formulario}" class="btn" th:text="#{hero.btn.unete}"
+                       style="background-color: #5d2b87; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none;">
+                        Únete
+                    </a>
+                    <a th:href="@{/servicios}" class="btn" th:text="#{hero.btn.masinfo}"
+                       style="border: 1px solid #333; color: #333; padding: 10px 20px; border-radius: 4px; text-decoration: none;">
+                        Más información
+                    </a>
                 </div>
             </div>
-
-            <!-- Imagen -->
             <div style="flex: 1 1 300px; text-align: center; margin-top: 30px;">
                 <img src="/img/shape%20your%20body%20(1).png" alt="Shape your body" style="max-width: 100%; border-radius: 30px;">
             </div>
@@ -30,97 +34,76 @@
 
         <!-- MISIÓN Y VISIÓN -->
         <section style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 60px 10%;">
-            <!-- Título -->
             <div style="flex: 1 1 300px;">
-                <h2 style="color: #5d2b87; font-size: 1.8rem; font-weight: bold;">
-                    Transforma tu vida con nuestra<br>misión de salud y bienestar integral.
+                <h2 style="color: #5d2b87; font-size: 1.8rem; font-weight: bold;" th:text="#{sobrenosotros.mision}">
+                    Transforma tu vida con nuestra misión de salud y bienestar integral.
                 </h2>
             </div>
-
-            <!-- Texto -->
             <div style="flex: 1 1 300px;">
-                <p>
-                    En nuestro negocio, creemos que cada persona merece alcanzar sus metas de salud.
-                    Nuestra visión es ofrecer un enfoque personalizado que inspire y motive a cada individuo.
-                    Juntos, trabajamos para construir un camino hacia un estilo de vida más saludable y equilibrado.
+                <p th:text="#{sobrenosotros.vision}">
+                    En nuestro negocio, creemos que cada persona merece alcanzar sus metas...
                 </p>
             </div>
         </section>
 
         <!-- VIDEO DE PRESENTACIÓN -->
         <section style="padding: 60px 10%; display: flex; justify-content: center; flex-direction: column; align-items: center; background-color: #fce6f9;">
-            <h2 style="color: #5d2b87; font-size: 1.8rem; font-weight: bold; margin-bottom: 20px;">
+            <h2 style="color: #5d2b87; font-size: 1.8rem; font-weight: bold; margin-bottom: 20px;" th:text="#{hero.presentacion}">
                 Conoce KFit Wellness Club
             </h2>
-            <p style="text-align: center; max-width: 800px; margin-bottom: 30px;">
-                Karina Martínez te da la bienvenida a KFit Wellness Club y te cuenta por qué este espacio está diseñado para transformar tu salud física y mental.
+            <p style="text-align: center; max-width: 800px; margin-bottom: 30px;" th:text="#{hero.presentacion.descripcion}">
+                Karina Martínez te da la bienvenida...
             </p>
 
             <video width="720" height="480" autoplay muted loop controls style="border-radius: 12px;">
                 <source th:src="@{/video/karima.MP4}" type="video/mp4">
-                Tu navegador no soporta la etiqueta <code>video</code>.
-                <!-- Redes con íconos -->
-
+                Tu navegador no soporta el video.
             </video>
 
-
             <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 30px;">
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/kfit_wellnessclub?igsh=dTdwbnZyZ2UzYnQ1" target="_blank" style="text-align: center;">
+                <a href="https://www.instagram.com/kfit_wellnessclub" target="_blank">
                     <img th:src="@{/img/instagram_icon.png}" alt="Instagram" style="width: 60px;">
-                 
                 </a>
-
-                <!-- TikTok -->
-                <a href="https://www.tiktok.com/@kfit_wellnessclub?_t=ZM-8vj8kxb8GRB&_r=1" target="_blank" style="text-align: center;">
+                <a href="https://www.tiktok.com/@kfit_wellnessclub" target="_blank">
                     <img th:src="@{/img/tiktok_icon.png}" alt="TikTok" style="width: 60px;">
-                    
                 </a>
             </div>
         </section>
-        <!-- Sección Beneficios -->
+
+        <!-- BENEFICIOS -->
         <section style="padding: 60px 10%; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px;">
-            <!-- Texto -->
             <div style="flex: 1 1 300px; max-width: 500px;">
-                <h2 style="color: #5d2b87; font-size: 1.5rem; font-weight: bold; margin-bottom: 20px;">
-                    Descubre los beneficios de elegir nuestros servicios
+                <h2 style="color: #5d2b87; font-size: 1.5rem; font-weight: bold; margin-bottom: 20px;" th:text="#{beneficios.titulo}">
+                    Descubre los beneficios...
                 </h2>
-                <p style="margin-bottom: 20px;">
-                    Nuestros programas están diseñados para resultados garantizados con apoyo profesional constante.
-                </p>
+                <p style="margin-bottom: 20px;" th:text="#{beneficios.descripcion}"></p>
                 <ul style="list-style: none; padding: 0; color: #333;">
-                    <li>🏋️ Planes personalizados</li>
-                    <li>💪 Apoyo profesional en todo momento</li>
-                    <li>⏱️ Resultados garantizados</li>
+                    <li th:text="#{beneficios.item1}">🏋️ Planes personalizados</li>
+                    <li th:text="#{beneficios.item2}">💪 Apoyo profesional</li>
+                    <li th:text="#{beneficios.item3}">⏱️ Resultados garantizados</li>
                 </ul>
             </div>
-
-            <!-- Imagen -->
             <div style="flex: 1 1 300px; max-width: 400px;">
                 <img src="/img/kfitbienestar.png" alt="Tu Bienestar a tu manera" style="max-width: 100%; border-radius: 12px;">
             </div>
         </section>
 
-        <!-- CTA Inspiracional -->
+        <!-- CTA FINAL -->
         <section style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 60px 10%;">
-            <!-- Título -->
             <div style="flex: 1 1 300px;">
-                <h2 style="color: #5d2b87; font-size: 2rem; font-weight: bold;">Transforma tu salud hoy</h2>
+                <h2 style="color: #5d2b87; font-size: 2rem; font-weight: bold;" th:text="#{cta.titulo}">Transforma tu salud hoy</h2>
             </div>
-
-            <!-- Texto + botones -->
             <div style="flex: 1 1 300px;">
-                <p style="margin-bottom: 20px; max-width: 100%;">
-                    “El bienestar no es un destino, es un viaje constante. Cada entrenamiento, cada elección saludable y cada día con determinación te acercan a tu mejor versión. Sigue avanzando, tu cuerpo y mente te lo agradecerán.”
+                <p style="margin-bottom: 20px; max-width: 100%;" th:text="#{cta.descripcion}">
+                    El bienestar no es un destino...
                 </p>
                 <div style="display: flex; gap: 10px;">
-                    <a th:href="@{/cita/formulario}" class="btn" style="background-color: #5d2b87; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none;">Inscribirse</a>
-                    <a th:href="@{/sobrenosotros}" class="btn" style="border: 1px solid #333; color: #333; padding: 10px 20px; border-radius: 4px; text-decoration: none;">Info</a>
+                    <a th:href="@{/cita/formulario}" class="btn" style="background-color: #5d2b87; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none;" th:text="#{cta.btn1}">Inscribirse</a>
+                    <a th:href="@{/sobrenosotros}" class="btn" style="border: 1px solid #333; color: #333; padding: 10px 20px; border-radius: 4px; text-decoration: none;" th:text="#{cta.btn2}">Info</a>
                 </div>
             </div>
         </section>
 
-        <!-- Footer desde plantilla -->
         <footer th:replace="~{layout/plantilla :: footer}"></footer>
     </body>
 </html>

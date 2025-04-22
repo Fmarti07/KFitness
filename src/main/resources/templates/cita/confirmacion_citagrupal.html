@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{layout/plantilla :: head}">
+    <title th:text="#{confirmacion.cita.titulo}">Confirmación de Clase</title>
+</head>
+<body>
+
+<header th:replace="~{layout/plantilla :: header}"></header>
+
+<section style="background-color: #fceafa; padding: 80px 20px; text-align: center;">
+    <img th:src="@{/img/logotransparent.png}" alt="KFit Logo" style="height: 180px; margin-bottom: 20px;">
+
+    <!-- Box blanco -->
+    <div style="background-color: white; max-width: 600px; margin: 0 auto; padding: 40px 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <h1 style="color: #5d2b87; font-size: 2.5rem; margin-bottom: 30px;" th:text="#{confirmacion.cita.titulo}">¡Gracias por tu reserva!</h1>
+
+        <p style="font-size: 1.4rem; margin-bottom: 10px;">
+            <strong th:text="#{confirmacion.cita.nombre}">Nombre:</strong> <span th:text="${nombre}">Nombre</span>
+        </p>
+        <p style="font-size: 1.4rem; margin-bottom: 10px;">
+            <strong th:text="#{confirmacion.cita.tipo}">Clase reservada:</strong> <span th:text="${tipoClase}">Clase</span>
+        </p>
+        <p style="font-size: 1.4rem; margin-bottom: 10px;">
+            <strong th:text="#{confirmacion.cita.fecha}">Fecha:</strong> <span th:text="${fecha}">Fecha</span>
+        </p>
+        <p style="font-size: 1.4rem; margin-bottom: 30px;">
+            <strong th:text="#{confirmacion.cita.hora}">Hora:</strong> <span th:text="${hora}">Hora</span>
+        </p>
+
+        <div style="margin-top: 30px;">
+            <a th:href="@{/}" 
+               style="background-color: #ff69b4; color: white; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; margin: 10px;"
+               th:text="#{confirmacion.btn.inicio}">
+                Volver al inicio
+            </a>
+
+            <a th:href="@{/cita/clases}" 
+               style="border: 2px solid #ff69b4; color: #ff69b4; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; margin: 10px;"
+               th:text="#{confirmacion.btn.otra}">
+                Reservar otra clase
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer th:replace="~{layout/plantilla :: footer}"></footer>
+
+</body>
+</html>

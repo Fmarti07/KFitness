@@ -1,10 +1,12 @@
-<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
     <head th:fragment="head">
         <meta charset="UTF-8">
         <title>KFit Wellness Club</title>
 
         <link rel="stylesheet" th:href="@{/css/styles.css}">
         <link rel="stylesheet" th:href="@{/css/style.css}">
+        <link rel="stylesheet" href="../../static/img/css/styles.css" type="text/css"/>
+
 
         <style>
             header {
@@ -109,15 +111,16 @@
                 <div class="dropdown">
                     <a href="#" th:text="#{menu.mas}">Más Opciones</a>
                     <div class="dropdown-content">
+
                         <a th:href="@{/planes}" th:text="#{menu.planes}">Planes Disponibles</a>
-                        <a th:href="@{/sobrenosotros#testimonios}" th:text="#{menu.testimonios}">Testimonios</a>
+                        <a th:href="@{/servicios}" th:text="#{menu.servicios}">Nuestros Servicios</a> 
                         <a th:href="@{/cita/clases}" th:text="#{menu.reservar}">Reservar Clases Grupales</a>
-                        <a th:href="@{/nutricion}" th:text="#{menu.nutricion}">Nutrición</a>
-                        <a th:href="@{/cita/formulario}" th:text="#{menu.soporte}">Contactar Soporte</a>
-                        <a th:href="@{/sobrenosotros#equipo}" th:text="#{menu.entrenadores}">Ver Entrenadores</a>
+                        <a th:href="@{/cita/formulario}" th:text="#{menu.soporte}">Más información</a>
+                        <a th:href="@{/sobrenosotros#equipo}" th:text="#{menu.equipo_mision}">Nuestro Equipo y Misión</a>
                         <a th:href="@{/redes}" th:text="#{menu.redes}">Redes Sociales</a>
                     </div>
                 </div>
+
             </nav>
 
             <!-- Íconos de redes sociales -->
@@ -152,12 +155,11 @@
                     <a th:href="@{/}" th:text="#{footer.inicio}">Inicio Rápido</a>
                     <a th:href="@{/cita/formulario}" th:text="#{footer.contacto}">Contáctanos</a>
                     <a th:href="@{/servicios}" th:text="#{footer.servicios}">Nuestros Servicios</a>
-                    <a th:href="@{/servicios#testimonios}" th:text="#{footer.testimonios}">Testimonios</a>
                     <a th:href="@{/sobrenosotros}" th:text="#{footer.sobrenosotros}">Sobre Nosotros</a>
                 </div>
 
                 <!-- Suscripción -->
-                <!-- Suscripción -->
+    
                 <div>
                     <h4 th:text="#{footer.suscribete}">Suscríbete</h4>
                     <form th:action="@{/suscribirse}" method="post" class="subscribe-form" style="display: flex;">
@@ -176,10 +178,12 @@
             </div>
 
             <!-- Legal -->
+
             <hr style="margin-top: 30px; border: 1px solid #5d2b87;">
             <div class="footer-bottom" style="text-align: center; margin-top: 10px;">
-                <a th:href="@{/legales}">Política de Privacidad</a>
-                <a th:href="@{/legales}">Términos de Servicio</a>
+                <a th:href="@{/legales}" th:text="#{footer.politica}">Política de Privacidad</a> |
+                <a th:href="@{/legales}" th:text="#{footer.terminos}">Términos de Servicio</a> |
                 <a th:href="@{/cookies}" th:text="#{footer.cookies}">Configuración de Cookies</a>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #555;" th:text="#{footer.derechos}">© 2025 KFit Wellness Club. Todos los derechos reservados.</p>
             </div>
         </footer>

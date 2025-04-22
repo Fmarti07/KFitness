@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head th:replace="~{layout/plantilla :: head}">
-    <title>Planes Disponibles</title>
+    <title th:text="#{planes.titulo}">Planes Disponibles</title>
 </head>
 <body>
+
     <!-- Encabezado reutilizable -->
     <header th:replace="~{layout/plantilla :: header}"></header>
 
@@ -14,20 +15,31 @@
 
     <!-- Título -->
     <section style="padding: 60px 10%; text-align: center;">
-        <h1 style="color: #5d2b87;">Planes Disponibles</h1>
+        <h1 th:text="#{planes.titulo}" style="color: #5d2b87;">Planes Disponibles</h1>
 
         <!-- Lista de planes -->
         <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
             <div th:each="plan : ${planes}" 
                  style="border: 1px solid #ccc; padding: 20px; border-radius: 10px; width: 300px; text-align: center;">
-                
-                <h3 th:text="${plan.nombre}" style="color: #5d2b87;"></h3>
-                <p th:text="${plan.descripcion}"></p>
-                <p><strong>Precio:</strong> ₡<span th:text="${plan.precio}"></span></p>
-                <p><strong>Duración:</strong> <span th:text="${plan.duracion}"></span></p>
 
-                <!-- Botón de suscripción redirige al formulario de pago -->
+                <!-- Nombre multilenguaje -->
+                <h3 th:text="${#locale.language == 'en' ? plan.nombreEn : plan.nombre}" style="color: #5d2b87;"></h3>
+
+                <!-- Descripción multilenguaje -->
+                <p th:text="${#locale.language == 'en' ? plan.descripcionEn : plan.descripcion}"></p>
+
+                <!-- Precio -->
+                <p><strong th:text="#{planes.precio}">Precio:</strong> ₡<span th:text="${plan.precio}"></span></p>
+
+                <!-- Duración multilenguaje -->
+                <p>
+                    <strong th:text="#{planes.duracion}">Duración:</strong>
+                    <span th:text="${#locale.language == 'en' ? plan.duracionEn : plan.duracion}"></span>
+                </p>
+
+                <!-- Botón de suscripción -->
                 <a th:href="@{'/pago/formulario'(plan=${plan.nombre})}"
+                   th:text="#{planes.boton.agendar}"
                    style="background-color: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 5px; text-decoration: none;">
                     Suscribirse
                 </a>
@@ -35,7 +47,8 @@
         </div>
     </section>
 
-    <!-- Footer reutilizable -->
+    <!-- Footer -->
     <footer th:replace="~{layout/plantilla :: footer}"></footer>
+
 </body>
 </html>

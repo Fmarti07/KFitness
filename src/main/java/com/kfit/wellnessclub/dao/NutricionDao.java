@@ -6,6 +6,10 @@ package com.kfit.wellnessclub.dao;
 
 import com.kfit.wellnessclub.domain.Nutricion;
 import java.util.List;
+/**
+ *
+ * @author flormartinez
+ */
 
 public interface NutricionDao {
     List<Nutricion> listarTodo();

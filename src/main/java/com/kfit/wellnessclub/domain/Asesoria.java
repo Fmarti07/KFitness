@@ -4,6 +4,10 @@
  */
 package com.kfit.wellnessclub.domain;
 import lombok.Data;
+/**
+ *
+ * @author flormartinez
+ */
 
 @Data
 public class Asesoria {

@@ -2,6 +2,10 @@ package com.kfit.wellnessclub.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
+/**
+ *
+ * @author flormartinez
+ */
 
 @Entity
 @Data

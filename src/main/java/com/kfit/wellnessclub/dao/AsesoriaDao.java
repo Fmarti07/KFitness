@@ -6,7 +6,10 @@ package com.kfit.wellnessclub.dao;
 
 import com.kfit.wellnessclub.domain.Asesoria;
 import java.util.List;
-
+/**
+ *
+ * @author flormartinez
+ */
 public interface AsesoriaDao {
     void guardar(Asesoria asesoria);
     List<Asesoria> listar();

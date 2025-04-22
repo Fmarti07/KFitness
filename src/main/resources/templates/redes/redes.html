@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head th:replace="~{layout/plantilla :: head}">
-    <title>Redes Sociales - KFit</title>
+    <title th:text="#{redes.titulo}">Follow us on Social Media - KFit</title>
 </head>
 <body>
-<!-- Header -->
+
 <header th:replace="~{layout/plantilla :: header}"></header>
-<!-- Contenido -->
-<section style="padding: 60px 10%; text-align: center;">
-    <h1 style="color: #5d2b87;">Síguenos en Redes Sociales</h1>
-    <p style="margin-bottom: 30px;">Comparte tu progreso y mantente al día con nuestras novedades.</p>
-    <!-- TikTok -->
-    <div style="display: flex; justify-content: center; margin-bottom: 40px;">
+
+<section style="padding: 40px 5% 20px; text-align: center; background: linear-gradient(to right, #fceafa, #fce6f9);">
+    <h1 style="color: #5d2b87; font-size: 2.8rem; font-weight: bold;" th:text="#{redes.titulo}">
+        Follow us on Social Media
+    </h1>
+    <p style="font-size: 1.2rem; color: #4b0082; margin: 15px auto; max-width: 600px;" th:text="#{redes.subtitulo}">
+        Connect with us and discover exclusive content on our platforms.
+    </p>
+
+    <!-- TikTok Embed -->
+    <div style="margin: 30px auto; max-width: 600px;">
         <blockquote class="tiktok-embed"
             cite="https://www.tiktok.com/@kfit_wellnessclub"
             data-unique-id="kfit_wellnessclub"
             data-embed-type="creator"
-            style="max-width: 5000px; min-width: 520px; height: 700px;">
+            style="max-width: 100%; min-width: 280px; height: 580px;">
             <section>
                 <a target="_blank" href="https://www.tiktok.com/@kfit_wellnessclub?refer=creator_embed">
                     @kfit_wellnessclub
@@ -25,27 +30,44 @@
         </blockquote>
         <script async src="https://www.tiktok.com/embed.js"></script>
     </div>
-  <!-- Redes con íconos -->
-  
-   <p style="margin-bottom: 20px; display: flex; justify-content: center;">
-    <img th:src="@{/img/logotransparent.png}" alt="KFit Logo" style="height: 200px;">
-</p>
 
-<div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 30px;">
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/kfit_wellnessclub?igsh=dTdwbnZyZ2UzYnQ1" target="_blank" style="text-align: center;">
-        <img th:src="@{/img/instagram_icon.png}" alt="Instagram" style="width: 60px;">
-        <p style="color: #E1306C; font-weight: bold;">Instagram</p>
+    <!-- Redes Sociales -->
+    <div style="display: flex; justify-content: center; gap: 30px; margin-top: 20px;">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/kfit_wellnessclub?igsh=dTdwbnZyZ2UzYnQ1" target="_blank"
+           title="Instagram KFit">
+            <img th:src="@{/img/instagram_icon.png}" alt="Instagram" style="width: 50px; transition: transform 0.3s;"
+                 onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@kfit_wellnessclub?_t=ZM-8vj8kxb8GRB&_r=1" target="_blank"
+           title="TikTok KFit">
+            <img th:src="@{/img/tiktok_icon.png}" alt="TikTok" style="width: 50px; transition: transform 0.3s;"
+                 onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+        </a>
+    </div>
+
+    <!-- Logo -->
+    <div style="margin-top: 40px;">
+        <img th:src="@{/img/logotransparent.png}" alt="KFit Logo" style="height: 120px;">
+    </div>
+</section>
+
+<!-- CTA FINAL -->
+<section style="background-color: #5d2b87; color: white; text-align: center; padding: 40px 20px;">
+    <h3 th:text="#{ejercicio.cta}" style="font-size: 1.8rem; margin-bottom: 10px;">
+        Take the first step toward your best self
+    </h3>
+    <p th:text="#{ejercicio.cta.descripcion}" style="margin-bottom: 20px;">
+        Book your free session today.
+    </p>
+    <a th:href="@{/cita/formulario}" 
+       style="background-color: #ff5ebc; color: white; font-weight: bold; padding: 10px 25px; border-radius: 10px; text-decoration: none;">
+        <span th:text="#{hero.btn.agendar}">Book Appointment</span>
     </a>
+</section>
 
-    <!-- TikTok -->
-    <a href="https://www.tiktok.com/@kfit_wellnessclub?_t=ZM-8vj8kxb8GRB&_r=1" target="_blank" style="text-align: center;">
-        <img th:src="@{/img/tiktok_icon.png}" alt="TikTok" style="width: 60px;">
-        <p style="color: #000000; font-weight: bold;">TikTok</p>
-    </a>
-</div>
-
-<!-- Footer -->
 <footer th:replace="~{layout/plantilla :: footer}"></footer>
 </body>
 </html>

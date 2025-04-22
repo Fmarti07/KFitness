@@ -1,0 +1,61 @@
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title th:text="#{confirmacion.titulo}">Confirmación de Cita</title>
+    </head>
+    <body>
+
+        <header th:replace="~{layout/plantilla :: header}"></header>
+
+        <!-- Logo centrado -->
+        <p style="margin-bottom: 20px; display: flex; justify-content: center;">
+            <img th:src="@{/img/logotransparent.png}" alt="KFit Logo" style="height: 180px;">
+        </p>
+
+        <!-- Contenedor principal -->
+        <section style="padding: 60px 10%; text-align: center;">
+            <div style="background-color: #ffffff; padding: 40px; border-radius: 12px; max-width: 600px; margin: 0 auto; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+
+                <h2 style="color: #5d2b87;" th:text="#{confirmacion.cita.titulo}">¡Gracias por agendar tu cita!</h2>
+
+                <p><strong th:text="#{confirmacion.cita.nombre}">Nombre:</strong> <span th:text="${nombre}">Nombre</span></p>
+
+                <p>
+                    <strong th:text="#{confirmacion.cita.servicio}">Servicio:</strong>
+                    <span th:switch="${tipo}">
+                        <span th:case="'Nutrición'" th:text="#{cita.tipo.nutricion}">Nutrición</span>
+                        <span th:case="'Ejercicio'" th:text="#{cita.tipo.ejercicio}">Ejercicio</span>
+                        <span th:case="*"
+                              th:text="${tipo}">Otro</span>
+                    </span>
+                </p>
+
+                <p><strong th:text="#{confirmacion.cita.fecha}">Fecha:</strong> <span th:text="${fecha}">2025-04-20</span></p>
+                <p><strong th:text="#{confirmacion.cita.hora}">Hora:</strong> <span th:text="${hora}">08:00 a. m.</span></p>
+
+                <div style="margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                    <a th:href="@{/}" 
+                       style="background-color: #ff4fb7; color: white; padding: 10px 25px; border-radius: 8px; text-decoration: none; font-weight: bold;"
+                       th:text="#{confirmacion.btn.inicio}">
+                        Volver al inicio
+                    </a>
+
+                    <a th:href="@{/cita/formulario}" 
+                       style="border: 2px solid #ff4fb7; color: #ff4fb7; padding: 10px 25px; border-radius: 8px; text-decoration: none; font-weight: bold;"
+                       th:text="#{confirmacion.btn.otra}">
+                        Agendar otra cita
+                    </a>
+
+                    <a th:href="@{/cita/clases}" 
+                       style="border: 2px solid #5d2b87; color: #5d2b87; padding: 10px 25px; border-radius: 8px; text-decoration: none; font-weight: bold;"
+                       th:text="#{confirmacion.btn.clases}">
+                        Ver clases grupales
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <footer th:replace="~{layout/plantilla :: footer}"></footer>
+    </body>
+</html>

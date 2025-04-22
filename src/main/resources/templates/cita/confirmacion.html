@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head th:replace="~{layout/plantilla :: head}">
-    <title>Confirmación de Clase</title>
+    <title th:text="#{confirmacion.titulo}">Confirmación de Clase</title>
 </head>
 <body>
 <header th:replace="~{layout/plantilla :: header}"></header>
 
+<!-- Logo centrado -->
+<p style="margin-bottom: 20px; display: flex; justify-content: center;">
+    <img th:src="@{/img/logotransparent.png}" alt="KFit Logo" style="height: 180px;">
+</p>
+
+<!-- Sección de confirmación -->
 <section style="padding: 60px 10%; text-align: center;">
-    <h2 style="color: #5d2b87;" th:text="${mensaje}">¡Clase confirmada!</h2>
-    <a th:href="@{/}" style="margin-top: 20px; display: inline-block; background-color: #5d2b87; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Volver al inicio</a>
+    <div style="background-color: #fceafa; padding: 40px; border-radius: 12px; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #5d2b87;" th:text="#{suscripcion.titulo}">¡Gracias por suscribirte!</h2>
+        <p style="margin-top: 10px;" th:text="#{confirmacion.detalle}">
+            Nos alegra tenerte como parte de la familia KFit Wellness Club.
+        </p>
+        <a th:href="@{/}" 
+           style="margin-top: 30px; display: inline-block; background-color: #ff4fb7; color: white; padding: 10px 25px; border-radius: 8px; text-decoration: none; font-weight: bold;"
+           th:text="#{confirmacion.volver}">
+            Volver al inicio
+        </a>
+    </div>
 </section>
 
 <footer th:replace="~{layout/plantilla :: footer}"></footer>

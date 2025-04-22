@@ -1,5 +1,10 @@
 package com.kfit.wellnessclub.domain;
 
+/**
+ *
+ * @author flormartinez
+ */
+
 public class Cita {
     private Long id;
     private String nombre;

@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head th:replace="~{layout/plantilla :: head}">
-    <title>Configuración de Cookies</title>
+    <title th:text="#{cookies.titulo}">Configuración de Cookies</title>
 </head>
 <body>
-<header th:replace="~{layout/plantilla :: header}"></header>
+    <!-- Encabezado común -->
+    <header th:replace="~{layout/plantilla :: header}"></header>
 
-<section style="padding: 60px 10%; background-color: #fce6f9;">
-    <h1 style="color: #5d2b87;">Configuración de Cookies</h1>
+    <!-- Sección principal -->
+    <section style="padding: 60px 10%; background-color: #fce6f9;">
+        <h1 style="color: #5d2b87; text-align: center;" th:text="#{cookies.titulo}">Configuración de Cookies</h1>
 
+        <form method="post" th:action="@{/cookies/guardar}" style="margin-top: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <div style="margin-bottom: 25px;">
+                <label style="display: block; margin-bottom: 10px;">
+                    <input type="checkbox" name="esenciales" checked disabled>
+                    <span th:text="#{cookies.esenciales}">Cookies esenciales (requeridas)</span>
+                </label>
 
-    <form method="post" th:action="@{/cookies/guardar}" style="margin-top: 30px;">
-        <div style="margin-bottom: 20px;">
-            <label>
-                <input type="checkbox" name="esenciales" checked disabled> Cookies esenciales (requeridas)
-            </label><br>
-            <label>
-                <input type="checkbox" name="analiticas"> Cookies analíticas
-            </label><br>
-            <label>
-                <input type="checkbox" name="marketing"> Cookies de marketing
-            </label>
-        </div>
-            <p style="max-width: 800px; margin-top: 20px;">
-        Usamos cookies para mejorar tu experiencia en nuestro sitio. Algunas cookies son esenciales para el funcionamiento de la página, mientras que otras nos ayudan a mejorar nuestros servicios.
-    </p>
+                <label style="display: block; margin-bottom: 10px;">
+                    <input type="checkbox" name="analiticas">
+                    <span th:text="#{cookies.analiticas}">Cookies analíticas</span>
+                </label>
 
-        <button type="submit"
-                style="background-color: #5d2b87; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
-            Guardar preferencias
-        </button>
-    </form>
-</section>
+                <label style="display: block;">
+                    <input type="checkbox" name="marketing">
+                    <span th:text="#{cookies.marketing}">Cookies de marketing</span>
+                </label>
+            </div>
 
-<footer th:replace="~{layout/plantilla :: footer}"></footer>
+            <p style="margin-bottom: 30px;" th:text="#{cookies.descripcion}">
+                Usamos cookies para mejorar tu experiencia...
+            </p>
+
+            <button type="submit"
+                    style="background-color: #5d2b87; color: white; padding: 12px 24px; border: none; border-radius: 6px; font-size: 1rem; font-weight: bold;"
+                    th:text="#{cookies.guardar}">
+                Guardar preferencias
+            </button>
+        </form>
+    </section>
+
+    <!-- Footer-->
+    <footer th:replace="~{layout/plantilla :: footer}"></footer>
 </body>
 </html>

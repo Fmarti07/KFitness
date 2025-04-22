@@ -6,6 +6,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Repository;
+/**
+ *
+ * @author flormartinez
+ */
 
 @Repository
 public class AsesoriaDaoImpl implements AsesoriaDao {

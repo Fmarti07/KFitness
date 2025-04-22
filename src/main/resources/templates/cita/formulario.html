@@ -1,142 +1,146 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
     <head th:replace="~{layout/plantilla :: head}">
-        <title>Agendar Cita</title>
+        <title th:text="#{cita.titulo}">Agendar Cita</title>
     </head>
     <body>
+
         <header th:replace="~{layout/plantilla :: header}"></header>
+
+        <!-- Logo -->
         <p style="margin-bottom: 20px; display: flex; justify-content: center;">
             <img th:src="@{/img/logotransparent.png}" alt="KFit Logo" style="height: 200px;">
         </p>
 
-        <!-- Formulario -->
+        <!-- Formulario de cita -->
         <section style="padding: 60px 10%; display: flex; justify-content: center;">
-            <div style="background-color: #fce6f9; padding: 40px; border-radius: 12px; max-width: 500px; width: 100%; box-shadow: 0 0 15px rgba(0,0,0,0.05);">
-                <h2 style="color: #5d2b87; text-align: center; margin-bottom: 30px;">Agendar Cita</h2>
-                <form th:action="@{/cita/guardar}" th:object="${cita}" method="post" style="display: flex; flex-direction: column; gap: 15px;">
-                    <input type="text" th:field="*{nombre}" placeholder="Nombre" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
-                    <input type="email" th:field="*{correo}" placeholder="Correo" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
-                    <input type="date" th:field="*{fecha}" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
-                    <select th:field="*{tipo}" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
-                        <option value="">Seleccione tipo</option>
-                        <option value="Ejercicio">Ejercicio</option>
-                        <option value="Nutrición">Nutrición</option>
+            <div style="background-color: #fce6f9; padding: 40px; border-radius: 12px; max-width: 500px; width: 100%;">
+                <h2 th:text="#{cita.titulo}" style="color: #5d2b87; text-align: center; margin-bottom: 30px;">Agendar Cita</h2>
+
+                <form th:action="@{/cita/guardar}" method="post" style="display: flex; flex-direction: column; gap: 15px;">
+                    <input type="text" name="nombre" th:placeholder="#{cita.nombre}" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+                    <input type="email" name="correo" th:placeholder="#{cita.correo}" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+                    <input type="date" name="fecha" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+
+                    <select name="tipo" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+                        <option value="" disabled selected th:text="#{cita.seleccione.tipo}">Seleccione tipo de cita</option>
+                        <option value="Nutrición" th:text="#{cita.tipo.nutricion}">Nutrición</option>
+                        <option value="Ejercicio" th:text="#{cita.tipo.ejercicio}">Ejercicio</option>
                     </select>
-                    <button type="submit"
-                            style="background-color: #ff69b4; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: bold;">
+
+                    <select name="hora" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+                        <option value="" disabled selected th:text="#{form.hora}">Seleccione una hora</option>
+                        <option value="08:00">08:00 AM</option>
+                        <option value="09:00">09:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="13:00">01:00 PM</option>
+                        <option value="14:00">02:00 PM</option>
+                        <option value="15:00">03:00 PM</option>
+                        <option value="16:00">04:00 PM</option>
+                        <option value="17:00">05:00 PM</option>
+                    </select>
+
+                    <button type="submit" th:text="#{cita.btn}" style="background-color: #ff69b4; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: bold;">
                         Agendar
                     </button>
                 </form>
+
+                <div style="margin-top: 30px; text-align: center;">
+                    <p style="color: #5d2b87; font-weight: bold;" th:text="#{cita.clase.grupal.pregunta}">¿Te gustaría agendar una clase grupal?</p>
+                    <a th:href="@{/cita/clases}" 
+                       style="display: inline-block; background-color: #5d2b87; color: white; padding: 10px 25px; border-radius: 8px; text-decoration: none; font-weight: bold;"
+                       th:text="#{cita.clase.grupal.ver}">
+                        Ver clases grupales
+                    </a>
+                </div>
             </div>
         </section>
-
-        <!-- Botón de clases grupales centrado debajo -->
-        <div style="text-align: center; margin-top: 20px; margin-bottom: 50px;">
-            <p style="color: #5d2b87; font-weight: bold; font-size: 1.1rem;">
-                🏋️ ¿Te gusta entrenar en grupo? Mira nuestras clases grupales
-            </p>
-            <a th:href="@{/cita/clases}" 
-               style="background-color: #5d2b87; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold;">
-                Ver Clases Grupales
-            </a>
-        </div>
-
         <!-- SECCIÓN DE CONTACTO -->
         <section style="background-color: #fceafa; padding: 60px 10%;">
             <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 30px;">
                 <!-- Correo -->
                 <div style="flex: 1 1 250px;">
-                    <p style="font-size: 1.5rem; font-weight: bold; color: #5d2b87;">📧 Correo</p>
-                    <p>Contáctanos para más información sobre nuestros servicios.</p>
+                    <p style="font-size: 1.5rem; font-weight: bold; color: #5d2b87;" th:text="#{footer.contacto.correo}">📧 Correo</p>
+                    <p th:text="#{footer.contacto.correo.desc}">Contáctanos para más información sobre nuestros servicios.</p>
                     <a href="mailto:kafitness@gmail.com">kafitness@gmail.com</a>
                 </div>
                 <!-- Teléfono -->
                 <div style="flex: 1 1 250px;">
-                    <p style="font-size: 1.5rem; font-weight: bold; color: #5d2b87;">📞 Teléfono</p>
-                    <p>Estamos aquí para responder tus preguntas y dudas.</p>
+                    <p style="font-size: 1.5rem; font-weight: bold; color: #5d2b87;" th:text="#{footer.contacto.telefono}">📞 Teléfono</p>
+                    <p th:text="#{footer.contacto.telefono.desc}">Estamos aquí para ayudarte.</p>
                     <a href="tel:+50671848681">+506 7184 8681</a>
                 </div>
                 <!-- Oficina -->
                 <div style="flex: 1 1 250px;">
-                    <p style="font-size: 1.5rem; font-weight: bold; color: #5d2b87;">📍 Oficina</p>
-                    <p>Visítanos en nuestra ubicación para más detalles.</p>
+                    <p style="font-size: 1.5rem; font-weight: bold; color: #5d2b87;" th:text="#{footer.contacto.ubicacion}">📍 Oficina</p>
                     <p>Cariari, Belén, Costa Rica</p>
+                    <a href="https://www.google.com/maps/place/Cariari,+Belén,+Costa+Rica" target="_blank">Obtener direcciones</a>
                 </div>
             </div>
         </section>
-        <!-- SECCIÓN DE CONTACTO mas mapa -->
-        <section style="padding: 60px 10%; display: flex; flex-wrap: wrap; gap: 40px;">
-            <!-- Información de contacto -->
-            <div style="flex: 1 1 300px; max-width: 400px;">
-                <h2 style="color: #5d2b87;">Contáctanos</h2>
-                <p>Encuentra nuestra ubicación y otras sucursales aquí.</p>
 
-                <div style="margin-top: 20px;">
-                    <h4 style="color: #5d2b87;">📧 Correo</h4>
-                    <p>Escríbenos a</p>
-                    <p><a href="mailto:kafitness@gmail.com">kafitness@gmail.com</a></p>
-
-                    <h4 style="color: #5d2b87;">📞 Teléfono</h4>
-                    <p>Llámanos al</p>
-                    <p><a href="tel:+50671848681">+506 7184 8681</a></p>
-
-                    <h4 style="color: #5d2b87;">📍 Oficina</h4>
-                    <p>Cariari, Belén, Costa Rica</p>
-                    <p><a href="https://www.google.com/maps/place/Cariari,+Belén,+Costa+Rica" target="_blank">Obtener Direcciones</a></p>
-                </div>
-            </div>
-
-            <!-- Mapa de Google -->
-            <div style="flex: 1 1 400px; max-width: 600px;">
+        <!-- SECCIÓN DE MAPA -->
+        <section style="padding: 40px 10%;">
+            <div style="display: flex; justify-content: center;">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.5621375476335!2d-84.16726368579803!3d9.982376790142486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0fbb76fbb5d25%3A0xe9cbde148c871d18!2sCariari%2C%20Bel%C3%A9n%2C%20Costa%20Rica!5e0!3m2!1ses!2scr!4v1680000000000!5m2!1ses!2scr"
-                    width="100%" height="350" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"
+                    width="100%" height="350" style="border:0; border-radius: 12px;" allowfullscreen loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
         </section>
 
-        <!-- SECCIÓN DE PREGUNTAS FRECUENTES -->
+        <!-- PREGUNTAS FRECUENTES -->
         <section style="padding: 60px 10%; background-color: #fceffe;">
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-
                 <!-- Texto lateral -->
                 <div style="flex: 1 1 250px; margin-right: 30px;">
-                    <h2 style="color: #5d2b87;">Preguntas</h2>
-                    <p>Aquí encontrarás respuestas a las preguntas más comunes sobre nuestros servicios de ejercicios y nutrición.</p>
-                    <a href="/cita/formulario" class="btn" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background-color: #fff; border: 2px solid #5d2b87; color: #5d2b87; text-decoration: none; border-radius: 5px;">Contáctanos</a>
+                    <h2 style="color: #5d2b87;" th:text="#{form.preguntas}">Preguntas</h2>
+                    <p th:text="#{form.preguntas.desc}">Aquí encontrarás respuestas a las preguntas más comunes sobre nuestros servicios.</p>
+                    <a th:href="@{/cita/formulario}" 
+                       class="btn"
+                       style="margin-top: 15px; padding: 10px 20px; background-color: #fff; border: 2px solid #5d2b87; color: #5d2b87; text-decoration: none; border-radius: 5px;"
+                       th:text="#{form.preguntas.boton}">
+                        Contáctanos
+                    </a>
                 </div>
-
                 <!-- Preguntas -->
                 <div style="flex: 2 1 500px;">
                     <details style="margin-bottom: 15px;">
-                        <summary style="font-weight: bold; color: #5d2b87;">¿Qué servicios ofrecen?</summary>
-                        <p>Ofrecemos programas personalizados de ejercicios y planes de nutrición adaptados a tus necesidades. Nuestro enfoque es integral, buscando mejorar tu bienestar general. Contamos con entrenadores y nutricionistas certificados.</p>
+                        <summary style="font-weight: bold; color: #5d2b87;" th:text="#{form.faq1.titulo}">¿Qué servicios ofrecen?</summary>
+                        <p th:text="#{form.faq1.descripcion}">Ofrecemos programas de ejercicios y nutrición personalizados.</p>
                     </details>
-
                     <details style="margin-bottom: 15px;">
-                        <summary style="font-weight: bold; color: #5d2b87;">¿Cómo puedo inscribirme?</summary>
-                        <p>Puedes inscribirte a través de nuestro sitio web. Simplemente completa el formulario de registro. También puedes contactarnos directamente para más información.</p>
+                        <summary style="font-weight: bold; color: #5d2b87;" th:text="#{form.faq2.titulo}">¿Cómo puedo inscribirme?</summary>
+                        <p th:text="#{form.faq2.descripcion}">Desde nuestro formulario o por contacto directo.</p>
                     </details>
-
                     <details style="margin-bottom: 15px;">
-                        <summary style="font-weight: bold; color: #5d2b87;">¿Tienen planes grupales?</summary>
-                        <p>Sí, ofrecemos planes grupales que fomentan la motivación y el trabajo en equipo. Estos planes son ideales para amigos o familiares que desean ejercitarse juntos. Consulta nuestras tarifas y horarios disponibles.</p>
+                        <summary style="font-weight: bold; color: #5d2b87;" th:text="#{form.faq3.titulo}">¿Tienen planes grupales?</summary>
+                        <p th:text="#{form.faq3.descripcion}">Sí, contamos con planes grupales para motivación y entrenamiento conjunto.</p>
                     </details>
-
                     <details style="margin-bottom: 15px;">
-                        <summary style="font-weight: bold; color: #5d2b87;">¿Qué métodos de pago?</summary>
-                        <p>Aceptamos diversas formas de pago, incluyendo tarjetas de crédito y débito. También puedes optar por transferencias bancarias. Para más detalles, visita nuestra sección de pagos.</p>
+                        <summary style="font-weight: bold; color: #5d2b87;" th:text="#{form.faq4.titulo}">¿Qué métodos de pago aceptan?</summary>
+                        <p th:text="#{form.faq4.descripcion}">Tarjeta, transferencia y otros métodos seguros.</p>
                     </details>
-
                     <details>
-                        <summary style="font-weight: bold; color: #5d2b87;">¿Hay una prueba gratuita?</summary>
-                        <p>Sí, ofrecemos una prueba gratuita de una semana para nuevos usuarios. Esto te permitirá conocer nuestros servicios sin compromiso. Regístrate en nuestro sitio para aprovechar esta oferta.</p>
+                        <summary style="font-weight: bold; color: #5d2b87;" th:text="#{form.faq5.titulo}">¿Hay prueba gratuita?</summary>
+                        <p th:text="#{form.faq5.descripcion}">Sí, ofrecemos una semana de prueba para nuevos usuarios.</p>
                     </details>
                 </div>
             </div>
         </section>
-
+        <!-- CTA FINAL -->
+        <section style="background-color: #5d2b87; color: white; text-align: center; padding: 60px 20px;">
+            <h3 class="fw-bold" th:text="#{ejercicio.cta}">Take the first step toward your best self</h3>
+            <p th:text="#{ejercicio.cta.descripcion}">Book your free session today.</p>
+            <a th:href="@{/cita/formulario}" 
+               style="background-color: #ff5ebc; color: white; font-weight: bold; padding: 10px 25px; border-radius: 10px; text-decoration: none;">
+                <span th:text="#{hero.btn.agendar}">Book Appointment</span>
+            </a>
+        </section>
+        <!-- Footer -->
         <footer th:replace="~{layout/plantilla :: footer}"></footer>
     </body>
 </html>

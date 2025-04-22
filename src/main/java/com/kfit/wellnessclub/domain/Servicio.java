@@ -1,5 +1,10 @@
 package com.kfit.wellnessclub.domain;
 
+/**
+ *
+ * @author flormartinez
+ */
+
 public class Servicio {
     private Long id;
     private String titulo;

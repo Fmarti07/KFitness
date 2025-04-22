@@ -1,4 +1,4 @@
-// src/main/java/com/kfit/wellnessclub/domain/Pago.java
+
 package com.kfit.wellnessclub.domain;
 
 public class Pago {

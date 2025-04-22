@@ -8,7 +8,10 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+/**
+ *
+ * @author flormartinez
+ */
 @Repository
 @Transactional
 public class EjercicioDaoImpl implements EjercicioDao {

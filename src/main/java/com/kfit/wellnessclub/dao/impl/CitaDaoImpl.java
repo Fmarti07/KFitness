@@ -7,7 +7,10 @@ import org.springframework.stereotype.Repository;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ *
+ * @author flormartinez
+ */
 @Repository
 public class CitaDaoImpl implements CitaDao {
 

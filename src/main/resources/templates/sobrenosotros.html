@@ -1,73 +1,136 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
-<head th:replace="~{layout/plantilla :: head}">
-    <title>Sobre Nosotros - KFit</title>
-</head>
-<body>
-    <header th:replace="~{layout/plantilla :: header}"></header>
+    <head th:replace="~{layout/plantilla :: head}">
+        <link rel="stylesheet" href="../static/img/css/styles.css" type="text/css"/>
 
-    <!-- MISIÓN -->
-    <section style="background-color: #fceafa; padding: 60px 10%;">
-        <h2 style="color: #5d2b87;">Nuestra Misión</h2>
-        <p>Promover un estilo de vida saludable a través del ejercicio y la nutrición balanceada.</p>
+        <title th:text="#{sobrenosotros.titulo}">Sobre Nosotros - KFit</title>
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"></header>
 
-        <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 40px;">
-            <div style="flex: 1 1 300px;">
-                <p style="font-weight: bold; color: #5d2b87;">Nuestra historia: Pasión por el ejercicio y la nutrición para todos.</p>
+        <section style="background-color: #fceafa; padding: 80px 10%; text-align: center;">
+            <div style="max-width: 900px; margin: 0 auto;">
+
+                <!-- Título de Misión -->
+                <h2 style="color: #5d2b87; font-size: 3rem; font-weight: bold; margin-bottom: 30px;" th:text="#{sobrenosotros.mision}">
+                    Nuestra Misión
+                </h2>
+
+                <!-- Texto de Misión -->
+                <p style="font-size: 1.6rem; line-height: 2; color: #4b0082;" th:text="#{sobrenosotros.objetivo}">
+                    Promover un estilo de vida saludable a través del ejercicio y la nutrición balanceada. En KFit Wellness Club creemos en el poder de transformar vidas a través de pequeños hábitos diarios sostenibles.
+                </p>
+
+                <!-- Separador -->
+                <hr style="margin: 50px auto; width: 60px; border: 2px solid #ff4fb7; border-radius: 2px;">
+
+                <!-- Título de Historia -->
+                <h3 style="color: #5d2b87; font-size: 2.5rem; font-weight: bold; margin-bottom: 20px;" th:text="#{sobrenosotros.historia}">
+                    Nuestra historia: Pasión por el ejercicio y la nutrición para todos.
+                </h3>
+
+                <!-- Texto de Historia -->
+                <p style="font-size: 1.5rem; line-height: 2; color: #333;" 
+                   th:text="#{sobrenosotros.historia.descripcion}">
+                    KFit nació del sueño de crear un espacio accesible para todas las personas interesadas en mejorar su salud física y mental. Lo que comenzó como una idea entre amigos apasionados por el fitness, se convirtió en una comunidad sólida, diversa y motivadora. A través de planes personalizados, acompañamiento profesional y un enfoque humano, hemos ayudado a cientos de personas a encontrar equilibrio, bienestar y felicidad. 
+                </p>
+
+                <!-- Frase final traducible -->
+                <p style="font-size: 1.4rem; font-style: italic; color: #5d2b87; margin-top: 30px;"
+                   th:text="#{sobrenosotros.frase}">
+                    Porque todos merecemos sentirnos bien en nuestro cuerpo y mente.
+                </p>
+
             </div>
-            <div style="flex: 1 1 300px; text-align: center;">
-                <img src="/img/mision.jpg" alt="Misión" style="width: 100%; max-width: 400px; border-radius: 12px;">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- EQUIPO -->
-    <section style="padding: 60px 10%;">
-        <h2 style="color: #5d2b87; text-align: center;">Nuestro equipo</h2>
-        <p style="text-align: center;">Conoce a nuestros profesionales de ejercicio y nutrición.</p>
+        <!-- LOGO -->
+        <p style="margin-bottom: 20px; display: flex; justify-content: center;">
+            <img th:src="@{/img/logotransparent.png}" alt="KFit Logo" style="height: 200px;">
+        </p>
 
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
-            <div style="text-align: center;">
-                <img src="/img/equipo1.jpg" alt="Juan Pérez" style="width: 180px; border-radius: 10px;">
-                <p><strong>Juan Pérez</strong><br>Entrenador Personal</p>
-            </div>
-            <div style="text-align: center;">
-                <img src="/img/equipo2.jpg" alt="María López" style="width: 180px; border-radius: 10px;">
-                <p><strong>María López</strong><br>Nutricionista Certificada</p>
-            </div>
-            <div style="text-align: center;">
-                <img src="/img/equipo3.jpg" alt="Carlos Gómez" style="width: 180px; border-radius: 10px;">
-                <p><strong>Carlos Gómez</strong><br>Fisioterapeuta</p>
-            </div>
-            <!-- Agrega más miembros si lo deseas -->
-        </div>
-    </section>
+        <!-- EQUIPO -->
+        <section style="padding: 60px 10%; background-color: #fce6f9;">
+            <h2 style="color: #5d2b87; text-align: center; font-size: 2.2rem; font-weight: bold;"
+                th:text="#{sobrenosotros.equipo}">Nuestro equipo</h2>
+            <p style="text-align: center; color: #333; font-size: 1.1rem;" th:text="#{sobrenosotros.equipo.descripcion}">
+                Conoce a nuestros profesionales de ejercicio y nutrición.
+            </p>
 
-    <!-- ESTADÍSTICAS Y TESTIMONIOS -->
-    <section style="background-color: #fceafa; padding: 60px 10%;">
-        <h2 style="color: #5d2b87;">Estadísticas que reflejan nuestro compromiso con la salud</h2>
-        <p>Contamos con más de 500 clientes satisfechos que han transformado su vida con nosotros.</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 60px; margin-top: 50px;">
+                <div style="text-align: center; max-width: 250px;">
+                    <img th:src="@{/img/coach1.png}" alt="Juan Pérez"
+                         style="width: 220px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <p style="margin-top: 15px;">
+                        <strong>Juan Pérez</strong><br><span style="color: #4b0082;" th:text="#{sobrenosotros.rol.entrenador}">Entrenador Personal</span>
+                    </p>
+                </div>
 
-        <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 30px;">
-            <div style="flex: 1 1 300px;">
-                <img src="/img/estadistica.jpg" alt="Estadística" style="width: 100%; border-radius: 10px;">
+                <div style="text-align: center; max-width: 250px;">
+                    <img th:src="@{/img/coachmujer.png}" alt="María López"
+                         style="width: 220px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <p style="margin-top: 15px;">
+                        <strong>María López</strong><br><span style="color: #4b0082;" th:text="#{sobrenosotros.rol.nutricionista}">Nutricionista Certificada</span>
+                    </p>
+                </div>
+
+                <div style="text-align: center; max-width: 250px;">
+                    <img th:src="@{/img/coah2.png}" alt="Carlos Gómez"
+                         style="width: 220px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <p style="margin-top: 15px;">
+                        <strong>Carlos Gómez</strong><br><span style="color: #4b0082;" th:text="#{sobrenosotros.rol.fisio}">Fisioterapeuta</span>
+                    </p>
+                </div>
             </div>
-            <div style="flex: 1 1 300px;">
-                <p><strong>95%</strong> recomiendan nuestros servicios.</p>
-                <p><strong>80%</strong> mejora en salud general.</p>
-                <a th:href="@{/cita/formulario}" class="btn" style="margin-top: 20px; background-color: #5d2b87; color: white; padding: 10px 20px; border-radius: 5px;">Contáctanos</a>
+        </section>
+
+        <!-- ESTADÍSTICAS Y TESTIMONIOS -->
+        <section style="background-color: #fceafa; padding: 60px 10%;">
+            <h2 style="color: #5d2b87;" th:text="#{sobrenosotros.estadisticas.titulo}">
+                Estadísticas que reflejan nuestro compromiso con la salud
+            </h2>
+            <p th:text="#{sobrenosotros.estadisticas.descripcion}">
+                Contamos con más de 500 clientes satisfechos que han transformado su vida con nosotros.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 30px; align-items: center;">
+                <div style="flex: 1 1 400px;">
+                    <img th:src="@{/img/estadistica.png}" alt="Estadística"
+                         style="width: 100%; max-width: 600px; border-radius: 12px;">
+                </div>
+                <div style="flex: 1 1 400px;">
+                    <p style="font-size: 1.3rem;"><strong>95%</strong> <span th:text="#{sobrenosotros.recomiendan}">recomiendan nuestros servicios.</span></p>
+                    <p style="font-size: 1.3rem;"><strong>80%</strong> <span th:text="#{sobrenosotros.mejorasalud}">mejora en salud general.</span></p>
+                    <a th:href="@{/cita/formulario}" class="btn"
+                       style="margin-top: 20px; background-color: #5d2b87; color: white; padding: 12px 25px; border-radius: 6px; font-size: 1.1rem;"
+                       th:text="#{sobrenosotros.btn.contactar}">
+                        Contáctanos
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <div style="margin-top: 60px; text-align: center;">
-            <h3 style="color: #5d2b87;">Lo que dicen nuestros clientes</h3>
-            <blockquote style="font-style: italic; margin-top: 20px;">
-                "Desde que comencé a entrenar aquí, mi energía ha aumentado y me siento más saludable que nunca."
-                <br><span style="font-weight: bold;">- Laura Pérez, Cliente</span>
-            </blockquote>
-        </div>
-    </section>
-
-    <footer th:replace="~{layout/plantilla :: footer}"></footer>
-</body>
+            <!-- TESTIMONIO -->
+            <div style="margin-top: 60px; text-align: center;">
+                <h3 style="color: #5d2b87;" th:text="#{sobrenosotros.testimonios.titulo}">Lo que dicen nuestros clientes</h3>
+                <blockquote style="font-style: italic; margin-top: 30px; font-size: 1.2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    <span th:text="#{sobrenosotros.testimonios.texto}">"Desde que comencé a entrenar aquí, mi energía ha aumentado y me siento más saludable que nunca."</span>
+                    <br>
+                    <img th:src="@{/img/testiomiogirl.png}" alt="Testimonio"
+                         style="margin-top: 20px; width: 150px; border-radius: 50%;">
+                    <br>
+                    <span style="font-weight: bold; display: block; margin-top: 10px;" th:text="#{sobrenosotros.testimonios.autor}">- Laura Pérez, Cliente</span>
+                </blockquote>
+            </div>
+        </section>
+        <!-- CTA FINAL -->
+        <section style="background-color: #5d2b87; color: white; text-align: center; padding: 60px 20px;">
+            <h3 class="fw-bold" th:text="#{ejercicio.cta}">Take the first step toward your best self</h3>
+            <p th:text="#{ejercicio.cta.descripcion}">Book your free session today.</p>
+            <a th:href="@{/cita/formulario}" 
+               style="background-color: #ff5ebc; color: white; font-weight: bold; padding: 10px 25px; border-radius: 10px; text-decoration: none;">
+                <span th:text="#{hero.btn.agendar}">Book Appointment</span>
+            </a>
+        </section>
+        <footer th:replace="~{layout/plantilla :: footer}"></footer>
+    </body>
 </html>
